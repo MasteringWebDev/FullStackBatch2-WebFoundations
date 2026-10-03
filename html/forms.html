@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    <form>
+        <h2>Event Registration Form</h2>
+        <div>
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" name="fullname">
+        </div>
+
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+
+        <div>
+            <label for="resume">Resume</label>
+            <input type="file" id="resume" name="resume">
+        </div>
+
+        <div>
+            Gender
+            <input type="radio" name="gender" value="M" id="gender-male">
+            <label for="gender-male">Male</label>
+            <input type="radio" name="gender" value="F" id="gender-female">
+            <label for="gender-female">Female</label>
+            <input type="radio" name="gender" value="O" id="gender-other">
+            <label for="gender-other">Other</label>
+        </div>
+
+        <div>
+            Hobbies
+            <input type="checkbox" name="hobbies" value="Swimming" id="hobbies-swimming">
+            <label for="hobbies-swimming">Swimming</label>
+            <input type="checkbox" name="hobbies" value="Dancing" id="hobbies-dancing">
+            <label for="hobbies-dancing">Dancing</label>
+            <input type="checkbox" name="hobbies" value="Singing" id="hobbies-singing">
+            <label for="hobbies-singing">Singing</label>
+        </div>
+
+        <div>
+            <label for="city">City</label>
+            <select name="city" id="city">
+                <option value="London">London</option>
+                <option value="New York">New York</option>
+                <option value="Dublin">Dublin</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio" rows="5"></textarea>
+        </div>
+
+
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
+
+<!--
+    # Forms:
+        - Used to collect data from the user
+        - Tags:
+            - <form></form>: Wrapper tag for HTML forms
+            - <input>: Field to collect user input
+                - 'type' (required)
+                    - text: Simple text input
+                    - number: Number input
+                    - email: Email input
+                    - password: Password input
+                    - file: File input
+                    - radio: Single selection
+                    - checkbox: Multiple selection
+                - 'placeholder': Provide a hint
+            - <button></button: Buttons
+                - 'type'
+                    - submit: Used to submit the form
+                    - reset: Used to reset the form
+                    - button: Used to add custom button in the form
+                - 'disabled': Disable a button
+
+            - <select></select>: Dropdowns
+                - <option></option>: Dropdown options
+
+            - <textarea></textarea>: Ideal for paragraph length text input
+                - 'rows': Set the height
+                - 'cols': Set the width
+
+
+            - <label></label>: Bind a label to a form field
+
+-->

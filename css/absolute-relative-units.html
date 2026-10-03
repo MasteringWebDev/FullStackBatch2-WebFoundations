@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolute & Relative Units</title>
+  <style>
+    #box-1 {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+    }
+
+    #parent {
+      width: 300px;
+      height: 200px;
+      background-color: lightgreen;
+    }
+
+    #child {
+      width: 50%;
+      height: 200px;
+      background-color: lightcoral;
+    }
+
+    #box-2 {
+      width: 50vw;
+      height: 10vh;
+      background-color: lightblue;
+    }
+
+    /* ----------- */
+    #header {
+      font-size: 20px; /* 1em = 20px */
+    }
+
+    #header h1 {
+      font-size: 3em; /* 3 * 20px = 60px */
+    }
+
+    #header p {
+      font-size: 1.5em; /* 1.5 * 20px = 30px */
+    }
+
+    #header img {
+      width: 20em; /* 20 * 20px = 400px */
+    }
+
+    /* ----------- */
+    html {
+      font-size: 18px; /* 1rem = 18px */
+    }
+
+    #header-2 h1 {
+      font-size: 2.5rem; /* 2.5 * 18px = 45px */
+    }
+
+    #header-2 p {
+      font-size: 1.2rem; /* 1.2 * 18px = 21.6px */
+    }
+
+    #header-2 img {
+      width: 20rem; /* 20 * 18px = 360px */
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="box-1"></div>
+
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+
+  <div id="box-2"></div> -->
+
+  <!-- <div id="header">
+    <h1>Welcome to our App</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis impedit ad unde repellendus ex animi vero deleniti dolorum ipsa harum. Veniam dolor illum atque ullam id aspernatur delectus eius soluta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error amet eum nostrum placeat autem dolore possimus nihil hic facere, cupiditate magni numquam, laboriosam minima reprehenderit! Voluptatibus magni aut accusamus sit sapiente dolorum omnis explicabo perspiciatis, dolores neque nulla molestias! Perferendis.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, non.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqKNv5xCnp32XRaEq2bkrjtC_c9Z06v2xX5QEPjAkvKdzrtel3q-qJdk3L&s=10">
+  </div> -->
+
+  <div id="header-2">
+    <h1>Welcome to our App</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis impedit ad unde repellendus ex animi vero deleniti dolorum ipsa harum. Veniam dolor illum atque ullam id aspernatur delectus eius soluta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error amet eum nostrum placeat autem dolore possimus nihil hic facere, cupiditate magni numquam, laboriosam minima reprehenderit! Voluptatibus magni aut accusamus sit sapiente dolorum omnis explicabo perspiciatis, dolores neque nulla molestias! Perferendis.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, non.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqKNv5xCnp32XRaEq2bkrjtC_c9Z06v2xX5QEPjAkvKdzrtel3q-qJdk3L&s=10">
+  </div>
+</body>
+</html>
+
+<!--
+  # Absolute & Relative Units:
+    - Absolute Units: Fixed values that do not change based on other elements or the viewport. 
+      - px (pixels)
+      - pt (points)
+    - Relative Units: Values that are relative to other elements or the viewport.
+      - % (percentage, relative to the parent element)
+      - vw (viewport width)
+      - vh (viewport height)
+      - em (relative to the font-size of the element)
+      - rem (relative to the font-size of the root element)
+-->

@@ -1,0 +1,66 @@
+# Git: Version Control System (VCS)
+  - Tool used to track changes in code over time
+  - Why needed?
+    - Track changes in the codebase
+    - Collaborate with teams
+    - Go back to previous version
+
+# GitHub: Cloud platform for Git repositories
+  - Used to store and share Git repositories online
+  - Alternatives:
+    - GitLab
+    - Bitbucket
+
+# First time setup:
+  1. Download Git: https://git-scm.com/install
+  2. Create a GitHub Account: https://github.com
+  3. Login in Visual Studio Code using GitHub account
+  4. Set name and email globally:
+    - git config --global user.name "name"
+    - git config --global user.email "email" (Email associated with Github Account)
+
+# Important terms:
+  - Repository (Repo): Project folder tracked by Git
+    - Local Repository: On your computer
+    - Remote Reposiory: On GitHub (Can be shared online)
+  - Local repository
+    - Working directory: Where you write and modify code
+    - Staging area: Where selected changes are prepared before commit
+  - Commit: Snapshot of changes saved in Git (along with a commit message)
+  - Branch: A separate version of your project (Default branch: main/master)
+  - push: Send commits from local repository -> remote repository (Upload)
+  - pull: Get latest commits from remote repostory -> local repository (Download)
+  - Clone: Copy a remote repository to local machine
+
+# Git Workflow
+  - PUSH CODE TO GITHUB
+    - First time
+      1. Initialize a git repository
+        - git init: Create a local repository (Will also create a hidden .git folder)
+      2. Working directory (Write and modify code):
+        - git status: Checks status of git repository
+          - Displays branch name
+          - Untracked files: Files in working directory, not staged
+          - Changes not staged for commit: Changes in working directory, not staged
+          - Changes to be committed: Files which are in staging area and ready to be commited
+      3. Working directory -> Staging area
+        - git add .: Add all file changes to staging area
+          - git add specific.html: Adds only specific.html file changes to staging area
+      4. Commit (Snapshot of changes)
+        - git commit -m "Commit message": Commits the staged changes and returns commit hash
+        - git log: Commit history
+          - git log --oneline: Commit history in one line
+      5. Remote
+        - Create a new repository on GitHub
+        - git remote add origin <git-repository-url> : Links remote repository to local repository
+        - git push -u origin main: Push changes to remote repository on GitHub
+    - Second time and onwards
+      - git add .: Add all file changes to staging area
+        - git add specific.html: Adds only specific.html file changes to staging area
+      - git commit -m "Commit message": Commits the staged changes and returns commit hash
+      - git push: Push changes to remote repository on GitHub
+  - PULL CODE FROM GITHUB
+    - First time
+      - git clone <git-repository-url>: Clone repository
+    - Second time and onwards
+      - git pull: Pull code from remote repository on GitHub

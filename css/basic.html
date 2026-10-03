@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Basics</title>
+  <style>
+    /* p {
+      background-color: darkcyan;
+      color: white;
+    }
+
+    li {
+      color: brown;
+    } */
+
+    /* .special-para {
+      background-color: cadetblue;
+    }
+
+    #special-li {
+      background-color: brown;
+    } */
+
+    /* p {
+      border: 2px solid black;
+    } */
+
+    /* * {
+      border: 1px solid black;
+    } */
+
+    /* h1 {
+      color: blue;
+    } */
+  </style>
+  <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+  <!-- <h1 style="color: white; background-color: goldenrod; font-size: 100px; text-align: center;">CSS Basics</h1> -->
+  <h1>CSS Basics</h1>
+
+  <h2>Lorem ipsum dolor sit amet</h2>
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem quod nihil rerum optio porro deleniti est recusandae deserunt dolorem explicabo.</p>
+
+  <p class="special-para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis ea veritatis possimus voluptatem blanditiis, earum eveniet, iste veniam debitis sequi repellat at nihil, explicabo ab alias quaerat doloribus enim. Illo maxime voluptatibus nisi, pariatur architecto unde officia accusamus amet commodi facere esse impedit placeat necessitatibus dignissimos repellendus, porro eos reprehenderit dolorum accusantium sequi? Voluptatem eligendi, enim similique odio alias dolorem, vitae aspernatur dolorum distinctio quasi cupiditate. Adipisci, aliquid voluptates rerum velit doloribus animi, atque unde labore eos, vel numquam suscipit libero non eum assumenda. Quae earum magnam dolorum suscipit sunt libero? Repudiandae, officia? In mollitia itaque rerum ab praesentium blanditiis!</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolores blanditiis, quam aliquam eveniet provident quidem alias rerum qui eius, accusantium ut eaque excepturi? Ea!</p>
+  
+  <a href="https://www.w3schools.com">Go to W3Schools</a>
+
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQorg6ZIkP6XWUcARI35kjt-obhqP1JTDzCE2zxQ4rpzWcG-Py8ASLyx9E&s=10">
+
+  <p class="special-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quia deleniti laborum sint beatae, alias porro adipisci. Itaque soluta, modi voluptate ducimus obcaecati placeat veritatis nulla, blanditiis saepe qui porro! Molestias cumque ducimus alias quae quas, neque quo in tempore!</p>
+
+  <div id="box"></div>
+
+  <div id="test">John</div>
+</body>
+</html>
+
+<!--
+  # CSS:
+    - Cascading Style Sheets
+    - Add styles to webpages
+
+    - 3 types of styling:
+      1. Inline styling
+        - 'style' attribute
+        - Syntax: <tag style="property1: value1; property2: value2; ...">
+      2. Internal styling
+        - 'style' tag (inside head tag)
+        - Syntax:
+          <style>
+            selector {
+              property1: value1;
+              property2: value2;
+            }
+          </style>
+      3. External styling
+        - Create a separate file with .css extension
+        - Link this external css file to the HTML document
+        - Syntax:
+          - <link rel="stylesheet" href="style1.css">
+            - rel: Relation
+            - href: Hypertext reference
+
+
+    - Properties:
+      - color: Add color to HTML element
+      - background-color: Add background color to HTML element
+      - font-size: Size of the text element
+      - font-family: Font type of the text element
+      - text-align: Align the text (left|right|center|justify)
+      - border: Border to HTML elements
+        - Syntax: border: [width] [style] [color]
+        - Sub properties:
+          - border-width
+          - border-style
+          - border-color
+      - border-radius: Rounded border corners
+      - width: Set the width of HTML elements
+      - height: Set the height of HTML elements
+      - padding: Space around the content and before the border
+      - margin: Space around the content after the border
+      - padding, margin:
+        - Syntax 
+          - (1 value): [*-top,*-right,*-bottom,*-left]
+          - (2 values): [*-top,*-bottom] [*-right,*-left]
+          - (4 values): [*-top] [*-right] [*-bottom] [*-left]
+        - Sub properties:
+          *-top
+          *-right
+          *-bottom
+          *-left
+
+    - Selectors:
+      - Element selector (h1, p, div, img, a, etc.)
+      - Class seelctor (.): Multiple elements
+      - ID selector (#): Unique element
+      - Universal selector (*): All elements
+
+    - Specificity:
+      - Inline > Internal, External
+      - Latest value for the style property is applicable
+
+    - Color codes:
+      - RGB (Red, Green, Blue)
+        - Syntax: rgb(R, G, B)
+          - R, G, B values can range from 0-255
+        - Examples:
+          - rgb(0, 0, 0): Black
+          - rgb(255, 0, 0): Red
+          - rgb(0, 255, 0): Green
+          - rgb(0, 0, 255): Blue
+          - rgb(255, 255, 255): White
+        - RGBA (A - Alpha/Opacity/Transparency)
+          - A: 0-1 (0 -> invisible, 1 -> 100% visible)
+      - HEX (0-F)
+        - Syntax: #RRGGBB
+          - RR, GG, BB values can range from 00-FF
+        - Examples:
+          - #000000: Black
+          - #FF0000: Red
+          - #00FF00: Green
+          - #0000FF: Blue
+          - #FFFFFF: White
+        - #RRGGBBAA (AA - Alpha/Opacity/Transparency)
+          - AA: 00-FF (00 -> invisible, FF -> 100% visible)
+        
+    - Comments in CSS:
+      /* */
+-->

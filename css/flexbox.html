@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <style>
+    /* #container {
+      background-color: rgba(95, 158, 160, 0.23);
+      height: 800px;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .items {
+      background-color: cadetblue;
+      width: 100px;
+      height: 100px;
+    } */
+
+    /* #outer-div {
+      background-color:cornflowerblue;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #inner-div {
+      background-color: lightcoral;
+      width: 300px;
+      height: 300px;
+    } */
+
+    /* .product-card {
+      width: 400px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      margin: 10px;
+    }
+
+    .product-card img {
+      width: 100%;
+    }
+
+    .product-card .product-info, .product-card .product-actions {
+      padding: 10px;
+    }
+
+    .product-card .product-info h4 {
+      margin: 0;
+    }
+
+    .product-card .product-info p {
+      color: rgba(0, 0, 0, 0.499);
+    }
+
+    .product-card .product-info .price {
+      font-size: 18px;
+    }
+
+    .product-card .product-info .product-title-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .product-card .product-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product-card .product-actions button {
+      padding: 10px;
+      border: none;
+      width: 100%;
+    }
+
+    #products-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    } */
+  </style>
+</head>
+<body>
+    <!-- <div id="container">
+      <div class="items" style="order: 3">1</div>
+      <div class="items" style="order: 2">2</div>
+      <div class="items" style="order: 1">3</div>
+    </div> -->
+
+    <!-- <div id="outer-div">
+      <div id="inner-div"></div>
+    </div> -->
+
+    <!-- <h1>Welcome to E-Commerce App</h1>
+    <div id="products-container">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <div class="product-info">
+          <div class="product-title-wrapper">
+            <h4>JBL Headphones GT2343</h4>
+            <span>⭐️⭐️⭐️⭐️ (4.6k)</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tempora non velit itaque aperiam distinctio.</p>
+          <span><s>$339.00</s> <b class="price">$319.00</b></span>
+        </div>
+        <div class="product-actions">
+          <button>Add to card</button>
+          <button>Buy now</button>
+        </div>
+      </div>
+    </div> -->
+</body>
+</html>
+
+<!--
+  # Flexbox ***
+    - Organize items in one direction (horizontally or vertically)
+    - Properties:
+      - Container
+        - display ***: flex (Container follows flexbox layout)
+        - flex-direction ***: Set the direction of the items
+          - row (default): Main axis is horizontal, cross axis is vertical
+          - column: Main axis is vertical, cross axis is horizontal
+        - justify-content ***: Align items across 'main axis'
+          - start: Start of the container (default)
+          - end: End of the container
+          - center: Center of the container
+          - space-around: Equal space around items
+          - space-evenly: Equal space between items
+          - space-between: Equal space between items, but no space at the edges
+        - align-items ***: Align items across 'cross axis'
+          - start: Start of the container (default)
+          - end: End of the container
+          - center: Center of the container
+        - gap: Set the gap between items
+        - flex-wrap: Allow items to wrap to the next line
+          - nowrap (default): Items will not wrap
+          - wrap: Items will wrap to the next line
+      - Items:
+        - order: Set the order of the items (default is 0)
+        - flex-grow: Set the growth factor of the items (default is 0)
+-->

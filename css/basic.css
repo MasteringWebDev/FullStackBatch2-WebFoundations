@@ -1,0 +1,38 @@
+/* h1 {
+  color: red;
+}
+
+p {
+  color: green;
+}
+
+li {
+  color: blue;
+} */
+
+/* h1 {
+  color: green;
+} */
+
+img {
+  width: 100px;
+}
+
+#box {
+  width: 200px;
+  height: 200px;
+  background-color: #b80b564b;
+  border-radius: 50%;
+}
+
+p {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+#test {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 20px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tables</title>
+    <!-- Note: We will discuss these styles during CSS -->
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 1em;
+            font-size: 1.1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sonal</td>
+            <td>30</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Abian</td>
+            <td>28</td>
+            <td>Male</td>
+        </tr>
+    </table> -->
+
+    <!-- <table>
+        <tr>
+            <th>Name</th>
+            <th>Fruit</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>Orisunmade</td>
+            <td>Apple</td>
+            <td>Yellow</td>
+        </tr>
+        <tr>
+            <td>Sharon</td>
+            <td>Banana</td>
+            <td>Blue</td>
+        </tr>
+        <tr>
+            <td>Sonal</td>
+            <td>Mango</td>
+            <td>White</td>
+        </tr>
+        <tr>
+            <td>Mouad</td>
+            <td>Pineapple</td>
+            <td>Red</td>
+        </tr>
+    </table> -->
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Fruit</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>Orisunmade</td>
+            <td>Apple</td>
+            <td>Yellow</td>
+        </tr>
+        <tr>
+            <td>Sharon</td>
+            <td colspan="2">Orange</td>
+        </tr>
+        <tr>
+            <td>Sonal</td>
+            <td>Mango</td>
+            <td>White</td>
+        </tr>
+        <tr>
+            <td>Mouad</td>
+            <td>Pineapple</td>
+            <td>Red</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Emmanuel</td>
+            <td>Watermelon</td>
+            <td>Blue</td>
+        </tr>
+        <tr>
+            <td>Papaya</td>
+            <td>Purple</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!-- 
+    # Tables:
+        - Display data in rows and column format
+        - Tags:
+            - <table></table>: Wrapper tag for HTML table
+            - <tr></tr>: Table row
+            - <th></th>: Table header
+            - <td></td>: Table data
+        - Syntax:
+            <table>
+                <tr>
+                    <th>Table hedaer 1</th>
+                    <th>Table header 2</th>
+                </tr>
+                <tr>
+                    <td>Table data 1</td>
+                    <td>Table data 2</td>
+                </tr>
+            </table>
+
+        - Span (Cell Merge)
+            - colspan: Column Span
+                - Data is same across 'n' number of columns within a single row (Horizontally)
+            - rowspan: Row Span
+                - Data is same across 'n' number of cells in different rows (Vertically)
+-->

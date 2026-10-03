@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries</title>
+  <style>
+    html {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    #header h1 {
+      font-size: 2.5rem;
+    }
+
+    #header p {
+      font-size: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: rgba(173, 216, 230, 0.507);
+    }
+
+    #web-foundation-modules {
+      display: flex;
+      gap: 10px;
+      justify-content: space-evenly;
+    }
+
+    #web-foundation-modules div {
+      width: 300px;
+      background-color: cadetblue;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #web-foundation-modules div h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #web-foundation-modules div p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    #box-1 {
+      width: 600px;
+      height: 300px;
+      background-color: orange;
+      margin: 20px auto;
+    }
+
+    img {
+      width: 800px;
+    }
+
+    #box-2 {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 20px auto;
+    }
+    
+    /* Mobile screens (having width lesser than or equals to 480px) */
+    @media screen and (max-width: 480px) {
+      html {
+        font-size: 14px;
+      }
+
+      #web-foundation-modules {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #box-1 {
+        width: 300px;
+        border-radius: 50%;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      #box-2 {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>Full Stack Development Course</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ut voluptates dignissimos molestiae quae tenetur libero incidunt architecto praesentium! Praesentium, excepturi eos culpa labore dolores at provident, officia mollitia temporibus qui, accusamus harum necessitatibus? Nesciunt sit odio consectetur optio laboriosam, eveniet aliquid adipisci numquam, nemo, nisi qui neque sunt aperiam ut facere magni accusantium illum explicabo! Recusandae blanditiis dolorum, voluptate velit explicabo corporis veritatis placeat odit quos voluptatibus quaerat vero repellat nobis est, dignissimos aperiam alias rerum, accusantium distinctio. Harum, accusamus. Dolor quos veniam suscipit voluptatibus vel iure esse quaerat reiciendis nemo repellendus ut autem, ab harum aliquam odio exercitationem corporis! Ipsum corrupti architecto voluptate, iusto laudantium incidunt suscipit dolorum! Est sapiente necessitatibus, doloribus quos culpa ex libero tenetur corrupti vel velit, repellendus dolorum eos perspiciatis fugiat iste fugit suscipit exercitationem molestias eius odio optio tempore maiores minus. Ipsum mollitia recusandae sapiente ex corporis harum delectus non consectetur libero eveniet.</p>
+  </div>
+
+  <div>
+    <h2>Web Foundations</h2>
+    <div id="web-foundation-modules">
+      <div>
+        <h3>HTML</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      </div>
+      <div>
+        <h3>CSS</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, rerum!</p>
+      </div>
+      <div>
+        <h3>JavaScript</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque quis est animi</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="box-1"></div>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqKNv5xCnp32XRaEq2bkrjtC_c9Z06v2xX5QEPjAkvKdzrtel3q-qJdk3L&s=10">
+
+  <div id="box-2"></div>
+</body>
+</html>
+
+<!-- 
+  # Media Queries:
+    - Apply different styles to a webpage based on certain conditions, such as the width of the viewport, the device type, or the orientation of the device.
+
+    - Syntax:
+      @media media-type and (condition) {
+        /* CSS rules */
+      }
+      - media-type: Specifies the type of media:
+        - all: All media types (default)
+        - screen: Computer screens, tablets, smartphones, etc.
+        - print: Printed documents and print previews
+
+      - condition: Specifies the condition that must be met for the styles to be applied.
+        - min-width: The minimum width of the viewport
+        - max-width: The maximum width of the viewport
+        - orientation: The orientation of the device (portrait or landscape)
+
+-->
