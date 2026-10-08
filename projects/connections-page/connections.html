@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SocialConnect - Connections</title>
+  <link rel="icon" href="assets/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="connections.css">
+</head>
+<body>
+  <!-- -------- NAVBAR -------- -->
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        SocialConnect
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Connections</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://plus.unsplash.com/premium_photo-1723867331866-e112500178a4?q=80&w=2254&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Logo" width="24" height="24" class="d-inline-block align-text-top rounded-circle me-1">
+              Hi, Sharon
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- -------- MAIN -------- -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-suggestions-list" data-bs-toggle="list" href="#list-suggestions" role="tab" aria-controls="list-suggestions">Suggestions</a>
+          <a class="list-group-item list-group-item-action" id="list-requests-list" data-bs-toggle="list" href="#list-requests" role="tab" aria-controls="list-requests">
+            Requests
+            <span class="badge text-bg-secondary ms-1">1</span>
+          </a>
+          <a class="list-group-item list-group-item-action" id="list-manage-connections-list" data-bs-toggle="list" href="#list-manage-connections" role="tab" aria-controls="list-manage-connections">
+            Manage Connections 
+            <span class="badge text-bg-secondary ms-1">3</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="tab-content" id="nav-tabContent">
+          <!-- SUGGESTIONS SECTION -->
+          <div class="tab-pane fade show active" id="list-suggestions" role="tabpanel" aria-labelledby="list-suggestions-list">
+            <div class="d-flex gap-4 flex-wrap justify-content-center justify-content-md-start">
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1719603785926-84d214438120?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhZHNob3RzfGVufDB8MnwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Mouad</h5>
+                  <p class="card-text text-muted mb-1">Aspiring Frontend Developer</p>
+
+                  <div class="mb-2">
+                    <img src="https://images.unsplash.com/photo-1748028313767-67d97c23a0d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <img src="https://images.unsplash.com/photo-1645107914072-6f16b732f224?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <img src="https://plus.unsplash.com/premium_photo-1723485611501-d5575466fe59?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <span class="text-muted small">3 mutual connections</span>
+                  </div>
+
+                  <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/plus.png" width="16">
+                    Connect
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1768247695726-022586dea3a1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHNob3RzfGVufDB8MnwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Sonal</h5>
+                  <p class="card-text text-muted mb-1">Aspiring Backend Developer</p>
+
+                  <div class="mb-2">
+                    <img src="https://images.unsplash.com/photo-1645107914072-6f16b732f224?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <span class="text-muted small">1 mutual connection</span>
+                  </div>
+
+                  <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/plus.png" width="16">
+                    Connect
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1633625576932-348e73c45e82?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGVhZHNob3RzfGVufDB8MnwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Abian</h5>
+                  <p class="card-text text-muted mb-1">Aspiring Fullstack Developer</p>
+
+                  <div class="mb-2">
+                    <img src="https://images.unsplash.com/photo-1645107914072-6f16b732f224?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <img src="https://plus.unsplash.com/premium_photo-1723485611501-d5575466fe59?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <span class="text-muted small">2 mutual connections</span>
+                  </div>
+
+                  <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/plus.png" width="16">
+                    Connect
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REQUESTS SECTION -->
+          <div class="tab-pane fade" id="list-requests" role="tabpanel" aria-labelledby="list-requests-list">
+            <div class="d-flex gap-4 flex-wrap justify-content-center justify-content-md-start">
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1584999734482-0361aecad844?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMGltYWdlfGVufDB8MnwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Safiullah</h5>
+                  <p class="card-text text-muted mb-1">Aspiring AI Engineer</p>
+
+                  <div class="mb-2">
+                    <img src="https://images.unsplash.com/photo-1748028313767-67d97c23a0d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" width="20" class="rounded-circle" style="margin-left: -8px">
+                    <span class="text-muted small">1 mutual connection</span>
+                  </div>
+
+                  <button class="btn btn-primary rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/check.png" width="16">
+                    Accept
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MANAGE CONNECTIONS SECTION -->
+          <div class="tab-pane fade" id="list-manage-connections" role="tabpanel" aria-labelledby="list-manage-connections-list">
+            <div class="d-flex gap-4 flex-wrap justify-content-center justify-content-md-start">
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1748028313767-67d97c23a0d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Rohan</h5>
+                  <p class="card-text text-muted">Aspiring Mobile App Developer</p>
+                  <button class="btn btn-danger rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/cross.png" width="16">
+                    Remove connection
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img src="https://plus.unsplash.com/premium_photo-1723485611501-d5575466fe59?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Karan</h5>
+                  <p class="card-text text-muted">Aspiring Devops Engineer</p>
+                  <button class="btn btn-danger rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/cross.png" width="16">
+                    Remove connection
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1645107914072-6f16b732f224?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMGhlYWRzaG90c3xlbnwwfDJ8MHx8fDA%3D" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Aditi</h5>
+                  <p class="card-text text-muted">Aspiring Fullstack Developer</p>
+                  <button class="btn btn-danger rounded-pill w-100 d-flex justify-content-center align-items-center gap-1">
+                    <img src="assets/cross.png" width="16">
+                    Remove connection
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
