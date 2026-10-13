@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions</title>
+</head>
+<body>
+  <script>
+    /*
+      # Conditions:
+        - Create blocks/flows which execute based on true/false condition values
+        - Types:
+          1. "if else" condition ***
+            - Syntax:
+              if(condition) {
+                // Code to execute if the condition is true
+              } else {
+                // Code to execute if the condition is false 
+              }
+            - "else if": Used to additional "if conditions"
+              - Syntax:
+                if(condition1) {
+                  // Code to execute if the condition1 is true
+                } else if (condition2) {
+                  // Code to execute if the condition2 is true
+                } else {
+                  // Code to execute if both the conditions were false 
+                }
+
+          2. "switch case" condition: Checks one variable against multiple values (cases)
+            - Syntax:
+              switch(variable) {
+                case 'VALUE1': 
+                  // code to be executed when variable == VALUE1
+                  break
+                case 'VALUE2': 
+                  // code to be executed when variable == VALUE2
+                  break
+                case 'VALUE3': 
+                  // code to be executed when variable == VALUE3
+                  break
+                ...
+                default:
+                  // Default code to be executed when variable != any of the above cases
+              }
+
+          3. Ternary operator (? :) 
+            - "Syntactic sugar" for if else condition
+            - Syntax: condition ? // code if true : // code if false
+    */
+
+    /* -------- */
+    
+    // var num1 = 100
+    // var num2 = 50
+
+    // if(num1 > num2) {
+    //   console.log('YES')
+    // } else {
+    //   console.log('NO')
+    // }
+
+    /* -------- */
+    // var fruit1 = 'Apple'
+    // var fruit2 = 'Apple'
+
+    // if(fruit1 == fruit2) {
+    //   console.log('I have 2 units of the same fruit')
+    // } else {
+    //   console.log("I don't have 2 units of the same fruit")
+    // }
+
+    /* -------- */
+    // var num1 = 50
+    // var num2 = 100
+    // var num3 = 100
+
+    // # 1st Solution (else if)
+    // if(num1 == num2) {
+    //   console.log('Atleast 2 numbers are identical')
+    // } else if(num2 == num3) {
+    //   console.log('Atleast 2 numbers are identical')
+    // } else if(num1 == num3) {
+    //   console.log('Atleast 2 numbers are identical')
+    // } else {
+    //   console.log('All numbers are unique')
+    // }
+
+    // # 2nd Solution (OR condition)
+    // if(num1 == num2 || num2 == num3 || num1 == num3) {
+    //   console.log('Atleast 2 numbers are identical')
+    // } else {
+    //   console.log('All numbers are unique')
+    // }
+
+    /* ---------------- */
+    /* # Question 1: Take an I/P number fom the user and log 'YES' if it is greater than 100 or log 'NO' if it is lesser than 100 
+      1. I/P: 120 O/P: 'YES'
+      2. I/P: 50, O/P: 'NO'
+      3. I/P: 100, O/P: 'NO'
+    */
+
+    // var num = Number(prompt('Enter any number'))
+    // if(num > 100) {
+    //   console.log('YES')
+    // } else {
+    //   console.log('NO')
+    // }
+
+    /* ---------------- */
+    /* # Question 2: Take two I/P numbers fom the user and log 'EQUAL' if both the numbers are equal else log 'UNEQUAL'
+      1. I/P: 120, 120 O/P: 'EQUAL'
+      2. I/P: 0,0 O/P: 'EQUAL'
+      3. I/P: 5,10 O/P: 'UNEQUAL'
+    */
+
+    // var num1 = Number(prompt('Enter first number'))
+    // var num2 = Number(prompt('Enter second number'))
+
+    // if(num1 == num2) {
+    //   console.log('EQUAL')
+    // } else {
+    //   console.log('UNEQUAL')
+    // }
+
+    /* ---------------- */
+    /* # Question 3: Take two I/P numbers fom the user and log the greater number amongst those, else if both are equal log 'SAME NUMBERS'
+      1. I/P: 120, 100 O/P: 120
+      2. I/P: 0, 50 O/P: 50
+      3. I/P: 10, 10 O/P: 'SAME NUMBERS'
+    */
+
+    // var num1 = Number(prompt('Enter first number'))
+    // var num2 = Number(prompt('Enter second number'))
+
+    // if(num1 > num2) {
+    //   console.log(num1)
+    // } else if (num2 > num1) {
+    //   console.log(num2)
+    // } else {
+    //   console.log('SAME NUMBERS')
+    // }
+
+    /* ---------------- */
+    /* # Question 4: Take three I/P numbers fom the user and log the greatest number amongst those (Given that all 3 numbers are always unique)
+      1. I/P: 120, 100, 50 O/P: 120
+      2. I/P: 0, 50, 100 O/P: 100
+      3. I/P: 10, 50, 30 O/P: 50
+    */
+
+    // var num1 = Number(prompt('Enter first number'))
+    // var num2 = Number(prompt('Enter second number'))
+    // var num3 = Number(prompt('Enter third number'))
+
+    // if(num1 > num2 && num1 > num3) {
+    //   console.log(num1)
+    // } else if (num2 > num1 && num2 > num3) {
+    //   console.log(num2)
+    // } else {
+    //   console.log(num3)
+    // }
+
+    /* ---------------- */
+    /* # Question 5: Take a I/P fruit fom the user and log the color of that fruit
+      1. I/P: Banana O/P: Yellow
+      2. I/P: Apple O/P: Red
+      3. I/P: Watermelon O/P: Green
+      4. I/P: Any other O/P: NA
+    */
+
+    // var fruit = prompt('Enter fruit')
+
+    // # 1st Solution (if else)
+    // if(fruit == 'Banana') {
+    //   console.log('YELLOW')
+    // } else if (fruit == 'Apple') {
+    //   console.log('RED')
+    // } else if (fruit == 'Watermelon') {
+    //   console.log('GREEN')
+    // } else {
+    //   console.log('NA')
+    // }
+
+    // # 2nd Solution (switch case)
+    // switch(fruit) {
+    //   case 'Banana':
+    //     console.log('YELLOW')
+    //     break
+    //   case 'Apple':
+    //     console.log('RED')
+    //     break
+    //   case 'Watermelon':
+    //     console.log('GREEN')
+    //     break
+    //   default:
+    //     console.log('NA')
+    // }
+
+    /* ---------------- */
+    // TERNARY OPERATOR
+
+    /* # Question 1: Take an I/P number fom the user and log 'YES' if it is greater than 100 or log 'NO' if it is lesser than 100 
+      1. I/P: 120 O/P: 'YES'
+      2. I/P: 50, O/P: 'NO'
+      3. I/P: 100, O/P: 'NO'
+    */
+
+    // var num = Number(prompt('Enter any number'))
+    // console.log(num > 100 ? 'YES' : 'NO')
+
+    /* # Question 2: Take two I/P numbers fom the user and log 'EQUAL' if both the numbers are equal else log 'UNEQUAL'
+      1. I/P: 120, 120 O/P: 'EQUAL'
+      2. I/P: 0,0 O/P: 'EQUAL'
+      3. I/P: 5,10 O/P: 'UNEQUAL'
+    */
+
+    // var num1 = Number(prompt('Enter first number'))
+    // var num2 = Number(prompt('Enter second number'))
+
+    // console.log(num1 == num2 ? 'EQUAL' : 'UNEQUAL')
+  </script>
+</body>
+</html>
