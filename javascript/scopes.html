@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scopes</title>
+</head>
+<body>
+  <script>
+    /*
+      # Declare variables/constants
+        - var, let, const
+        - ES6: ECMAScript 6 (2015)
+          - let, const (Block scope)
+
+        - var: Variable
+          - Re-declared ✅
+          - Re-assignment ✅
+          - Function scope
+        - let: Variable
+          - Re-declared ❌
+          - Re-assignment ✅
+          - Block scope
+        - const: Constants
+          - Re-declared ❌
+          - Re-assignment ❌
+          - Block scope
+
+      # Scopes: Space where a variable can be accessed
+        - Global scope: Variable can be accessed anywhere in the file
+        - Function scope: Variable can be accessed within the function
+        - Block scope ({}): Variable can be accessed within the block
+    */
+
+    // var firstName = 'Sharon'
+    // var firstName = 'Sonal'
+    // console.log(firstName)
+
+    // let firstName = 'Sharon'
+    // let firstName = 'Sonal'
+    // console.log(firstName)
+
+    // const firstName = 'Sharon'
+    // firstName = 'Sonal'
+    // console.log(firstName)
+
+    /* ----------- */
+    // var count = 0 // Global scope
+    // if(true) {
+    //   console.log(count)
+    // }
+    // console.log(count)
+
+    // if(true) {
+    //   var count = 0 // Global scope
+    //   console.log(count)
+    // }
+    // console.log(count)
+
+    // let count = 0 // Global scope
+    // if(true) {
+    //   console.log(count)
+    // }
+    // console.log(count)
+
+    // if(true) {
+    //   let count = 0 // Block scope
+    //   console.log(count)
+    // }
+    // console.log(count)
+
+    /* ----------- */
+  </script>
+</body>
+</html>
