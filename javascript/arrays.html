@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Array Methods</title>
+</head>
+<body>
+  <script>
+    /*
+      # Arrays: Collection of multiple elements
+        - Syntax: let array = [element1, element2, ...]
+        - Different data type elements can exist within the same array
+
+        - Position vs Index
+          - Index = Position - 1
+          - Examples:
+            P   I
+            1   0
+            2   1
+            3   2
+            ... ...
+            n   n-1
+
+        - Access a specific element in an array using index
+          - Syntax: arr[index]
+
+        - Update a specific element in an array using index
+          - Syntax: arr[index] = newElement
+
+        - Iterate an array (using loops)
+          for(let i=0; i < arr.length; i++) {
+            console.log(arr[i])
+          }
+
+        - Properties
+          - .length ***: Total number of elements
+        - Methods
+          - .indexOf() ***: Returns the index of the first occurence of the element in the array, else if not found returns -1
+            - .lastIndexOf(): Returns the index of the last occurence of the element in the array, else if not found returns -1
+          - includes() ***: Returns true if the element is found in the array, else if not found returns false
+          - push(newElement) ***: Adds a new element to the end of the array
+            - Returns the updated length of the array
+          - pop() ***: Removes the last element from the array
+            - Returns the element that was removed
+          - unshift(newElement): Adds a new element to the start of the array
+            - Returns the updated length of the array
+          - shift(): Removes the first element from the array
+            - Returns the element that was removed
+          - concat(): Merge two or more arrays
+            - Returns the merged array
+          - slice(startIndex, endIndex) ***: Returns a subarray (Ensure startIndex < endIndex)
+            - startIndex, endIndex: startIndex to endIndex - 1
+            - startIndex: startIndex till the end of the array
+            - No arguments: Complete array
+          - reverse(): Reverse the order of array elements
+            - Will update the original array, return the reversed array
+
+        
+      # Additional note:
+        - Arrays to Strings:
+          - Array Method: .join()
+          - Concatenates elements to form a string and reurns that string
+          - Arguments:
+            - No argument: Joins elements separated by commas
+            - Separator: Joins elements separated by the separator
+        - Strings to Arrays:
+          - String Method: .split()
+          - Split the string into array elements, returns that array
+          - Arguments:
+            - No argument: Returns an array with single element
+            - Empty string: Returns an array with all characters of the string as elements
+            - Separator: Returns an array with elements split from the string wherever this separator was found
+
+
+    */
+
+    // let arr1 = [1, 2, 3, 4, 5]
+    // console.log(arr1)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+    // console.log(students)
+
+    // let arr2 = ['Sonal', 5, true, undefined, null]
+    // console.log(arr2)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+    // console.log(students)
+    // console.log(students[0])
+    // console.log(students[1])
+    // console.log(students[7])
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+    // students[5] = 'Safiullah Mehrabi'
+    // console.log(students)
+
+    // let student1 = 'Hassan'
+    // let student2 = 'Orisun'
+    // let student3 = 'Abian'
+    // let students = [student1, student2, student3]
+    // console.log(students)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+    // for(let i=0; i < students.length; i++) {
+    //   console.log(students[i])
+    // }
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan']
+    // console.log(students.length)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Abian', 'Sharon', 'Sonal']
+    // console.log(students.indexOf('Hassan'))
+    // console.log(students.indexOf('Abian'))
+    // console.log(students.lastIndexOf('Abian'))
+    // console.log(students.indexOf('Ankit'))
+    // console.log(students.includes('Mouad'))
+    // console.log(students.includes('Orisunmade'))
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan']
+    // students.push('Mouad')
+    // console.log(students)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan']
+    // students.pop()
+    // console.log(students)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan']
+    // // students.unshift('Mouad')
+    // students.shift()
+    // console.log(students)
+
+    // let studentsGroup1 = ['Abian', 'Emmanuel', 'Hassan']
+    // let studentsGroup2 = ['Mouad', 'Orisun', 'Safiullah']
+    // let studentsGroup3 = ['Sharon', 'Sonal']
+    // let allStudents = studentsGroup1.concat(studentsGroup2, studentsGroup3)
+    // console.log(allStudents)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+
+    // console.log(students.slice(2, 5))
+    // console.log(students.slice(4, 7))
+    // console.log(students.slice(5))
+    // console.log(students.slice())
+
+    // students.reverse()
+    // console.log(students)
+
+    // let students = ['Abian', 'Emmanuel', 'Hassan', 'Mouad', 'Orisun', 'Safiullah', 'Sharon', 'Sonal']
+    // console.log(students.join(' - '))
+
+    // let str = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+
+    // console.log(str.split())
+    // console.log(str.split(''))
+    // console.log(str.split(' '))
+    // console.log(str.split("'"))
+
+    /*
+      # Question: Reverse the characters of a string
+        I/P: Abian O/P: naibA
+        I/P: Mouad O/P: dauoM
+        I/P: Sonal O/P: lanoS
+    */
+
+    // let str = 'Sonal'
+
+    // let arr = str.split('')
+    // arr.reverse()
+    // console.log(arr)
+
+    // let result = arr.join('')
+
+    // console.log(result)
+
+  </script>
+</body>
+</html>
