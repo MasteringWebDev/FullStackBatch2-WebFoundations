@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+    /*
+      # Functions:
+        - A set/block of code which is intended to perform a particular task
+        - Function can be executed as many number of times as needed
+        - Advantages of functions:
+          - Avoid repeated code (redundancy)/ DRY principle (Don't repeat yourself)
+          - Modular code (organize code)
+
+        - For any function to be executed in JS, it needs two steps
+          1. Declaration: Only done once
+            - Syntax:
+              function fun1() {
+                // code
+              }
+          2. Invocation (Calling the function): Can be done 'n' number of times
+            - Syntax:
+              fun1()
+
+        - Types of functions:
+          1. Standard functions
+            function fun1() {
+              // code
+            }
+          2. Anonymous functions (does not have a name, used as function expression)
+            let fun1 = function () {
+              // code
+            }
+
+        - Parameters and arguments
+          - Can make a function dynamic (different I/P values give different O/P values)
+          - Parameters: Function variables in the declaration
+          - Arguments: Actual values for the function parameters passed during invocation
+          - Syntax:
+            function fun1(a, b) { // paramaters
+              // code
+            }
+            fun1(10, 20) // arguments
+          - Default paramaters: Default values for parameters will be applied if arguments are not provided for those paramaters
+            function fun1(a = 0, b = 0) {
+              // code
+            }
+            fun1(10, 20) // a = 10, b = 20
+            fun1(10) // a = 10, b = 0
+            fun1() // a = 0 , b = 0 
+
+        - 'return' keyword:
+          - Return a value at the point where the function was invoked
+          - Terminates the function execution at the point where it is used
+            
+
+
+    */
+
+    /* ------------- */
+    // function sayHi() {
+    //   console.log('Hi')
+    // }
+
+    // sayHi()
+
+    // function pizzaRecipe() {
+    //   console.log('1. Prepare the pizza base')
+    //   console.log('2. Add pizza sauce')
+    //   console.log('3. Add toppings')
+    //   console.log('4. Add cheeze')
+    //   console.log('5. Bake the pizza')
+    // }
+
+    // pizzaRecipe()
+
+    // let abc = function () {
+    //   console.log('Hi')
+    // }
+
+    // abc()
+
+    /* ------------- */
+    // function sum(num1, num2) {
+    //   console.log(num1 + num2)
+    // }
+
+    // sum(10, 20)
+    // sum(50, 70)
+    // sum(100, 85)
+
+    // function sum(num1, num2) {
+    //   console.log(num1 + num2)
+    // }
+
+    // sum(100, '85')
+
+    /* ------------- */
+    // # Question 1: Create a function to find the sum of three numbers
+    // function sum(num1 = 0, num2 = 0, num3 = 0) {
+    //   console.log(num1 + num2 + num3)
+    // }
+
+    // sum(10, 20, 30)
+    // sum(574838, 37943894, 3798985)
+    // sum(5, 10)
+    // sum(5)
+    // sum()
+
+    // # Question 2: Create a function to find the product of three numbers
+    // function product(num1 = 1, num2 = 1, num3 = 1) {
+    //   console.log(num1 * num2 * num3)
+    // }
+
+    // product(2, 3, 4)
+    // product(3895, 437847, 34874)
+    // product(5, 10)
+    // product(5)
+    // product()
+
+    // # Question 3: Create a function which takes firstName and lastName an logs the fullName of the user
+    // function getFullName(firstName, lastName) {
+    //   console.log(firstName + ' ' + lastName)
+    // }
+
+    // getFullName('Sharon', 'SH')
+    // getFullName('Ankit', 'KM')
+
+    // # Question 4: Create a function which takes a number as an input and logs even/odd
+    // function checkEvenOrOdd(num) {
+    //   if(num % 2 == 0) {
+    //     console.log('EVEN')
+    //   } else {
+    //     console.log('ODD')
+    //   }
+    // }
+
+    // function checkEvenOrOdd(num) {
+    //   if(num % 2) {
+    //     console.log('ODD')
+    //   } else {
+    //     console.log('EVEN')
+    //   }
+    // }
+
+    // function checkEvenOrOdd(num) {
+    //   console.log(num % 2 ? 'ODD' : 'EVEN')
+    // }
+
+    // checkEvenOrOdd(5)
+    // checkEvenOrOdd(10)
+    // checkEvenOrOdd(4879485003)
+
+    /* ------------- */
+    // function pizzaRecipe() {
+    //   console.log('1. Prepare the pizza base')
+    //   console.log('2. Add pizza sauce')
+    //   console.log('3. Add toppings')
+    //   console.log('4. Add cheeze')
+    //   console.log('5. Bake the pizza')
+    // }
+
+    // pizzaRecipe()
+
+    // function sum(num1, num2) {
+    //   return num1 + num2
+    // }
+
+    // // console.log(sum(4984, 8439894))
+    // let result = sum(4984, 8439894)
+    // console.log(result)
+
+    /* ------------- */
+    // # Question 5: Create a function which takes a number as an input and returns the factorial of that number
+    // function getFactorial(num) {
+    //   if(num < 0) {
+    //     return 'Invalid input'
+    //   } else if(num == 0 || num == 1) {
+    //     return 1
+    //   } else {
+    //     let factorial = 1
+    //     for(let i = num; i >= 2; i--) {
+    //       factorial = factorial * i
+    //     }
+    //     return factorial
+    //   }
+    // }
+
+    // console.log(getFactorial(5))
+    // console.log(getFactorial(10))
+    // console.log(getFactorial(8))
+
+    /* ------------- */
+    // # Question 6: Create a function which takes a number as an input and returns whether it is PRIME/ NOT PRIME
+
+    // function checkPrime(num) {
+    //   if(num <= 1) {
+    //     return 'NEITHER PRIME NOR COMPOSITE'
+    //   }
+
+    //   let factors = 0
+    //   for(let i = num; i >= 1; i--) {
+    //     if(num % i == 0) {
+    //       factors++
+    //     }
+    //   }
+
+    //   if(factors == 2) {
+    //     return 'PRIME'
+    //   } else {
+    //     return 'NOT PRIME'
+    //   }
+    // }
+
+    // function checkPrime(num) {
+    //   if(num <= 1) {
+    //     return 'NEITHER PRIME NOR COMPOSITE'
+    //   }
+
+    //   let addFactors = 0
+    //   for(let i = num - 1; i >= 2; i--) {
+    //     if(num % i == 0) {
+    //       addFactors++
+    //     }
+    //   }
+
+    //   return addFactors == 0 ? 'PRIME' : 'NOT PRIME'
+    // }
+
+    // function checkPrime(num) {
+    //   if(num <= 1) {
+    //     return 'NEITHER PRIME NOR COMPOSITE'
+    //   }
+
+    //   for(let i = num - 1; i >= 2; i--) {
+    //     if(num % i == 0) {
+    //       return 'NOT PRIME'
+    //     }
+    //   }
+
+    //   return 'PRIME'
+    // }
+
+    // console.log(checkPrime(1))
+    // console.log(checkPrime(2))
+    // console.log(checkPrime(3))
+    // console.log(checkPrime(4))
+    // console.log(checkPrime(5))
+    // console.log(checkPrime(6))
+    // console.log(checkPrime(7))
+    // console.log(checkPrime(8))
+    // console.log(checkPrime(9))
+    // console.log(checkPrime(10))
+  </script>
+</body>
+</html>
