@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    /*
+      # Objects: Collections of key value pairs
+        - key (string)
+        - values (data type)
+        - Syntax
+          let obj = {
+            key1: value1,
+            key2: value2,
+            ...
+          }
+
+        - Access values using keys
+          - Syntax 1: obj.key1
+          - Syntax 2: obj['key1']
+
+        - Add/Update values using keys
+          - Syntax 1: obj.key1 = value1
+          - Syntax 2: obj['key1'] = value1
+
+        - Delete a key
+          - 'delete' keyword
+          - Syntax: delete obj.key1
+
+        - Properties and Methods (Keys)
+          - Properties: Keys holding any value other than functions
+          - Methods: Keys holding functions as values
+
+        - Inbuilt object methods:
+          - Object.keys(): Returns an array of keys belonging to the object
+          - Object.values(): Returns an array of values belonging to the object
+          - Object.entries: Returns an array of [key, values] belonging to the object
+
+        - JSON: JavaScript Object Notation
+          - JSON.stringify(): Convert JS object to JSON string
+          - JSON.parse(): Convert a JSON string to JS object
+
+        - 'this' keyword: Refers to it's immediate parent object
+          - Within a method of an object: Refers to the parent object
+          - In global scope: Refers to the window object
+            - Window object 
+              - a.k.a BOM (Browser Object Model)
+              - Complete information about the webpage and the browser details
+              - Reserved keyword: window
+
+        - Additional notes:
+          - Arrays are special type of objects, where keys are numerical
+          - Constructors: Create objects of similar type
+            - Syntax: let obj = new Constructor()
+            - Inbuilt Constructors:
+              - Number()
+              - String()
+              - Boolean()
+          - JavaScript is an object-based langauge
+          - Wrapper objects for primitive values: JS under the hood, wraps the primitive values with the non-primitive object equivalent
+            - Reference: https://medium.com/javascript-refined/the-wrapper-object-400311b29151
+          - [object Object]: Objects in HTML document flow without converting it to string using JSON.strigify()
+
+    */
+
+    // let sharonDetails = ['Sharon', 'London', 2, 'Full Stack Development', 85]
+    // let hassanDetails = ['Hassan', 'New York', 5, 'Frontend Development', 88]
+
+    // console.log(sharonDetails[3]) // course
+    // console.log(hassanDetails[4]) // marks
+
+    // let sharonDetails = {
+    //   name: 'Sharon',
+    //   city: 'London',
+    //   batch: 2,
+    //   course: 'Full Stack Development',
+    //   marks: 85
+    // }
+
+    // let hassanDetails = {
+    //   name: 'Hassan',
+    //   city: 'New York',
+    //   batch: 5,
+    //   course: 'Frontend Development',
+    //   marks: 88
+    // }
+
+    // console.log(sharonDetails.course)
+    // // console.log(sharonDetails['course'])
+    // console.log(hassanDetails.marks)
+
+    // let sharonDetails = {
+    //   name: 'Sharon',
+    //   city: 'London',
+    //   batch: 2,
+    //   course: 'Full Stack Development',
+    //   marks: 85
+    // }
+
+    // sharonDetails.semester = 3
+    // sharonDetails.batch = 10
+
+    // console.log(sharonDetails)
+
+    // let craigDetails = {
+    //   name: 'Craig',
+    //   age: 25,
+    //   hasGraduated: true,
+    //   vehicleNo: null,
+    //   hobbies: ['Swimming', 'Dancing', 'Singing', 'Programming'],
+    //   address: {
+    //     addressLine1: 'XYZ Street',
+    //     addressLine2: 'ABC',
+    //     city: 'London',
+    //     zipCode: 123456
+    //   }
+    // }
+    // console.log(craigDetails)
+
+    // let hassanDetails = {
+    //   name: 'Hassan',
+    //   city: 'New York',
+    //   batch: 5,
+    //   course: 'Frontend Development',
+    //   marks: 88
+    // }
+
+    // delete hassanDetails.course
+    // console.log(hassanDetails)
+
+    // let craigDetails = {
+    //   name: 'Craig',
+    //   age: 25,
+    //   hasGraduated: true,
+    //   vehicleNo: null,
+    //   hobbies: ['Swimming', 'Dancing', 'Singing', 'Programming'],
+    //   address: {
+    //     addressLine1: 'XYZ Street',
+    //     addressLine2: 'ABC',
+    //     city: 'London',
+    //     zipCode: 123456
+    //   },
+    //   sayHi: function() {
+    //     console.log('Hi everyone!')
+    //   },
+    //   sum: function(num1, num2) {
+    //     console.log(num1 + num2)
+    //   }
+    // }
+
+    // console.log(craigDetails.name) // property
+    // craigDetails.sayHi() // method
+    // craigDetails.sum(50, 30)
+
+    // let obj = {
+    //   a: 5,
+    //   b: 10
+    // }
+
+    // console.log(JSON.stringify(obj))
+    // document.write(JSON.stringify(obj))
+
+    // let obj = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // console.log(JSON.stringify(obj))
+    // document.write(JSON.stringify(obj))
+
+    // let obj = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // let objString = JSON.stringify(obj)
+    // console.log(objString)
+    // let result = JSON.parse(objString)
+    // console.log(result)
+
+    // let hassanDetails = {
+    //   name: 'Hassan',
+    //   city: 'New York',
+    //   batch: 5,
+    //   course: 'Frontend Development',
+    //   marks: 88
+    // }
+
+    // console.log(Object.keys(hassanDetails))
+    // console.log(Object.values(hassanDetails))
+    // console.log(Object.entries(hassanDetails))
+
+    // let craigDetails = {
+    //   name: 'Craig',
+    //   age: 30,
+    //   hasGraduated: true,
+    //   vehicleNo: null,
+    //   hobbies: ['Swimming', 'Dancing', 'Singing', 'Programming'],
+    //   address: {
+    //     addressLine1: 'XYZ Street',
+    //     addressLine2: 'ABC',
+    //     city: 'London',
+    //     zipCode: 123456
+    //   },
+    //   sayIntro: function() {
+    //     console.log('Hi, my name is ' + craigDetails.name + ". I'm " + craigDetails.age + ' years old.')
+    //   }
+    // }
+
+    // craigDetails.sayIntro()
+
+    // console.log(window)
+
+    // console.log(this) // window
+
+    
+
+    /* ---------------- */
+    // let num1 = 5
+    // let num2 = new Number(5)
+    // console.log(num1)
+    // console.log(num2.valueOf())
+
+    // let str1 = 'Craig'
+    // let str2 = new String('Craig')
+    // console.log(str1.toUpperCase())
+    // console.log(str2.toUpperCase())
+
+    // let bool1 = true
+    // let bool2 = new Boolean(true)
+    // console.log(bool1)
+    // console.log(bool2.valueOf())
+  </script>
+</body>
+</html>
