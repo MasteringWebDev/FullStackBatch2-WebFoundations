@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execution Context</title>
+</head>
+<body>
+  <script>
+    /*
+      # Execution Context:
+        - An environment where JS code runs
+        - Provided by JavaScript Engine
+        - Types:
+          1. Global Execution Context (GEC)
+          2. Function Execution Context(s) (FEC)
+        - Execution Phases:
+          1. Memory allocation phase
+          2. Code execution phase
+
+      # References:
+        - JavaScript visualizer: https://pythontutor.com/visualize.html#mode=edit
+
+    */
+
+    /* -------------- */
+    // var num1 = 10
+    // var num2 = 20
+    // console.log(num1 + num2)
+
+    /*
+      Current phase running: 2. Code execution phase
+      - GEC
+        - num1: 10
+        - num2: 20
+    */
+
+    /* -------------- */
+    // var num1 = 100
+    // var arr = [1, 2, 3, 4, 5]
+    // var obj = {
+    //   a: 5,
+    //   b: 10
+    // }
+    // var num2 = 200
+    // console.log(num2/num1)
+    // console.log(arr[2])
+    // console.log(obj.b)
+
+    /* -------------- */
+    // var x = 10
+    // var y = 20
+
+    // function abc() {
+    //   var a = 100
+    //   var b = 200
+    //   console.log(a + b)
+    // }
+
+    // console.log(x + y)
+
+    // abc()
+
+    /*
+      - GEC
+        - x: 10
+        - y: 20
+        - abc: -> function abc()
+    */
+
+    /* -------------- */
+    // var num1 = 5
+    // var num2 = 10
+
+    // function sum(a, b) {
+    //   return a + b
+    // }
+
+    // var result = sum(num1, num2)
+    // console.log(result)
+
+    /* -------------- */
+    // function abc() {
+    //   var obj = {
+    //     a: 5,
+    //     b: 10
+    //   }
+    //   obj.a = 30
+    //   console.log(obj.a)
+    // }
+
+    // abc()
+  </script>
+</body>
+</html>
