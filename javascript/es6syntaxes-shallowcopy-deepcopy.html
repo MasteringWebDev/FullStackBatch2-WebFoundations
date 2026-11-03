@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Syntaxes, Shallow copy, Deep copy</title>
+</head>
+<body>
+  <script>
+    /*
+      # ES6 Syntaxes, Shallow copy, Deep copy
+        - ES: ECMAScript
+        - ES6: JavaScript 6th Edition (2015)
+        - Several 'Syntactic Sugar' (minimalist syntaxes) were introduced in this version
+        - ES6 is used extensively in modern JS libraries (React, Angular, Vue, etc.)
+
+        - Concepts/Syntaxes:
+          1. let and const (Block scope) ***
+            - let: Declare variables
+            - const: Declare constants
+
+          2. Template literals/strings (``)
+            - It starts and end with backticks (`)
+            - Supports multi-line strings and expressions
+            - Syntax to use variables/expressions within template strings:
+              `My name is ${fullName}`
+
+          3. Default parameters
+            - Default values can be provided to function parameters
+            - Default vales are applied if arguments are not passed for those parameters
+            - Example:
+              function fun1(a = 0, b = 0) {
+                // code
+              }
+              fun1(10, 20) // a = 10, b = 20
+              fun1(10) // a = 10, b = 0
+              fun1() // a = 0 , b = 0 
+
+          4. Arrow functions (() => {}) ***
+            - Syntactic sugar for anonymous function
+            - Syntax:
+              let abc = () => {
+                // code
+              }
+            - Single line arrow functions
+              - Scenarios:
+                1. Function has a single expression (Skip {})
+                  const abc = () => {
+                    console.log('abc')
+                  }
+                  const abc = () => console.log('abc')
+                2. Function having single return expression (Skip {} and return)
+                  const add = (num1, num2) => {
+                    return num1 + num2
+                  }
+                  const add = (num1, num2) => num1 + num2
+            - Functions which have 1 parameter (Skip ())
+              const square = num => num * num
+              const findNoOfChars = str => {
+                console.log(str.length)
+              }
+            
+          5. Object property shorthand (obj = { p1, p2 })
+            - Whenever the object property name and the name of the variable assigned to it are the same, { key: variable } can be declared as { key }
+            - Syntax:
+              let firstName = 'John'
+              let lastName = 'Doe'
+              let student = { firstName, lastName }
+
+          6. Destructuring ({ p1, p2 } = obj)
+            - Create variables having the same name as the property name and have the variable value = value of the property
+            - Syntax:
+              let student = { 
+                firstName: 'John', 
+                lastName: 'Doe'
+              }
+              let { firstName, lastName } = student
+
+          7. Spread Operator (...) ***
+            - Used to select all elements within arrays/ objects
+            - Syntax (Usually used with array [] /object {} brackets)
+              [...arr]
+              {...obj}
+
+        --------------
+        - Non-primitive value assignment: Any changes to a non-primitive value using one variable willl be reflected by the other variable as well because both are pointing to the same non-primitive value in the heap memory
+
+        - Copy for non-primitive values:
+          1. Shallow copy
+            - First order properties/elements are copied
+            - Best for simple arrays and objects
+            - Syntax: Using spread operator (...)
+          2. Deep copy
+            - Complete copy of properties across all levels/orders
+            - Best for complex arrays and objects
+            - Syntax: JSON.parse(JSON.stringify(obj))
+    */
+
+    /* -------------- */
+    // console.log('My hobbies are: \n\t1. Swimming \n\t2. Dancing \n\t3. Singing')
+// console.log(`My hobbies are:
+//   1. Swimming
+//   2. Dancing
+//   3. Singing
+// `)
+
+    // let johnDetails = {
+    //   name: 'John',
+    //   batch: 5,
+    //   hobbies: ['Programming', 'Singing', 'Running'],
+    //   address: {
+    //     city: 'London',
+    //     country: 'United Kingdom'
+    //   }
+    // }
+
+    // console.log('Hi, my name is ' + johnDetails.name + ". I'm from batch number " + johnDetails.batch + '. My hobbies are ' + johnDetails.hobbies.join(', ') + ". I'm from " + johnDetails.address.city + ', ' + johnDetails.address.country + '.')
+
+    // console.log(`Hi, my name is ${johnDetails.name}. I'm from batch number ${johnDetails.batch}. My hobbies are ${johnDetails.hobbies.join(', ')}. I'm from ${johnDetails.address.city}, ${johnDetails.address.country}.`)
+
+    /* -------------- */
+    // const sayHi = () => {
+    //   console.log('Hi')
+    // }
+
+    // sayHi()
+
+    // const add = (num1, num2) => {
+    //   return num1 + num2
+    // }
+
+    // const add = (num1, num2) => num1 + num2
+    // const subtract = (num1, num2) =>  num1 - num2
+    // const multiply = (num1, num2) =>  num1 * num2
+    // const divide = (num1, num2) =>  num1 / num2
+
+    // console.log(add(5, 10))
+    // console.log(subtract(5, 10))
+    // console.log(multiply(5, 10))
+    // console.log(divide(5, 10))
+
+    /* -------------- */
+    // let firstName = 'Sharon'
+    // let lastName = 'SH'
+    // let batch = 5
+
+    // let student = {
+    //   firstName: firstName,
+    //   lastName: lastName,
+    //   batch: batch
+    // }
+
+    // let student = { firstName, lastName, batch }
+
+    // let student = { firstName, lastName, batch }
+    // console.log(student)
+
+    /* -------------- */
+    // let johnDetails = {
+    //   name: 'John',
+    //   batch: 5,
+    //   hobbies: ['Programming', 'Singing', 'Running'],
+    //   address: {
+    //     city: 'London',
+    //     country: 'United Kingdom'
+    //   }
+    // }
+
+    // let name = johnDetails.name
+    // let batch = johnDetails.batch
+    // let hobbies = johnDetails.hobbies
+    // let address = johnDetails.address
+
+    // let { name, batch, hobbies, address } = johnDetails
+
+    // console.log(`Hi, my name is ${name}. I'm from batch number ${batch}. My hobbies are ${hobbies.join(', ')}. I'm from ${address.city}, ${address.country}.`)
+
+    // let { name: fullName, batch, hobbies, address } = johnDetails
+
+    // console.log(`Hi, my name is ${fullName}. I'm from batch number ${batch}. My hobbies are ${hobbies.join(', ')}. I'm from ${address.city}, ${address.country}.`)
+
+    // let { 
+    //   name, 
+    //   batch, 
+    //   hobbies, 
+    //   address: {
+    //     city,
+    //     country
+    //   } 
+    // } = johnDetails
+
+    // console.log(`Hi, my name is ${name}. I'm from batch number ${batch}. My hobbies are ${hobbies.join(', ')}. I'm from ${city}, ${country}.`)
+
+    /* -------------- */
+    // let arr = [1, 2, 3]
+    // console.log(...arr)
+
+    // let arr1 = [1, 2, 3]
+    // let arr2 = [4, 5, 6]
+    // let mergedArr = [...arr1, ...arr2]
+    // console.log(mergedArr)
+
+    // let obj1 = { a: 5, b: 10 }
+    // let obj2 = { c: 15, d: 20 }
+    // let obj = { ...obj1, ...obj2 }
+    // console.log(obj)
+
+    /* -------------- */
+    // let x = 5
+    // let y = x
+    // x = 10
+    // console.log(x)
+    // console.log(y)
+
+    // let obj1 = { a: 5, b: 10 }
+    // // let obj2 = obj1 // obj1 and obj2 point to the same object (Non primitive value assignment)
+    // let obj2 = { ...obj1 } // Shallow copy
+    // obj1.a = 100
+    // console.log(obj1.a)
+    // console.log(obj2.a)
+
+    /* -------------- */
+    // let johnDetails = {
+    //   name: 'John',
+    //   batch: 5,
+    //   address: {
+    //     city: 'London',
+    //     country: 'United Kingdom'
+    //   }
+    // }
+
+    // // let johnDetails2 = { ...johnDetails } // Shallow copy
+    // let johnDetails2 = JSON.parse(JSON.stringify(johnDetails)) // Deep copy
+
+    // johnDetails.name = 'John Doe' // Will get copied in shallow copy
+    // johnDetails.address.country = 'United States' // Will not get copied in shallow copy
+    
+    // console.log(johnDetails.name, johnDetails.address.country)
+    // console.log(johnDetails2.name, johnDetails2.address.country)
+  </script>
+</body>
+</html>
