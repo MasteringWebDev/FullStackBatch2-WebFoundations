@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Stack, Lexical Environment, Scope Chaining</title>
+</head>
+<body>
+  <script>
+    /*
+      # Call Stack, Lexical Environment, Scope Chaining
+        - Call Stack: Stack data structure (LIFO - Last In First Out)
+        - JS visualization tool: https://www.jsv9000.app/ 
+
+        - Lexical Environment:
+          - "Lexical" means where something is written in teh source code 
+          - "Lexical environment": An environment that stores the current scope + reference to it's outer scope
+            - JavaScript creates these environments based on how the code is written and nested
+
+        - Scope chain: Used to resolve identifier values. If an identifier is not found in the current scope, JS checks it in the parent scope, if not, continues to check up the ancestor scope until the global scope
+    */
+
+    /* ---------- */
+    // var x = 10
+    // var y = 20
+
+    // console.log(x + y)
+
+    /* ---------- */
+    // var x = 10
+    // var y = 20
+
+    // function abc() {
+    //   var a = 100
+    //   var b = 200
+    //   console.log(a + b)
+    // }
+
+    // console.log(x + y)
+
+    // abc()
+
+    /* ---------- */
+    // function sum(num1, num2) {
+    //   console.log(num1 + num2)
+    // }
+
+    // function diff(num1, num2) {
+    //   console.log(num1 - num2)
+    // }
+
+    // sum(20, 50)
+    // diff(100, 75)
+    // sum(2373, 37323)
+
+    /* ---------- */
+    // function abc() {
+    //   def()
+    //   console.log('abc')
+    // }
+
+    // function def() {
+    //   ghi()
+    //   console.log('def')
+    // }
+
+    // function ghi() {
+    //   console.log('ghi')
+    // }
+
+    // abc()
+
+    /* ---------- */
+    // function sum(n) {
+    //   let result = 0
+    //   for(let i = n; i >= 1; i--) {
+    //     result = result + i
+    //   }
+    //   return result
+    // }
+
+    // console.log(sum(10))
+
+    /* ---------- */
+    // Recursion: Function calling itself
+    // function sum(n) {
+    //   if(n == 1) {
+    //     return 1
+    //   }
+    //   return n + sum(n - 1)
+    // }
+
+    // console.log(sum(10))
+
+    /* ---------- */
+    // let num1 = 5 // Global scope
+
+    // function abc() {
+    //   let num2 = 10 // Function scope
+
+    //   if(true) {
+    //     let num3 = 15 // Block scope
+    //     console.log(num1, num2, num3) // All 3 variables are accessible here because those are within the lexical environment
+    //   }
+    // }
+
+    // abc()
+
+    /* ---------- */
+    // let num1 = 5 // Global scope
+
+    // function abc() {
+    //   let num2 = 10 // Function scope
+
+    //   if(true) {
+    //     let num3 = 15 // Block scope
+    //     console.log(num1, num2, num3)
+    //   }
+    // }
+
+    // abc()
+    
+  </script>
+</body>
+</html>
