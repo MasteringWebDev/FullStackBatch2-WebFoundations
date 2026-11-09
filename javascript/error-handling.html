@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling</title>
+</head>
+<body>
+  <script>
+    /*
+      # Error Handling ***:
+        - Runtime errors in JS if not handled, terminates teh execution process (Hence, the rest of the code will not be executed)
+        - Error Handling is a mechanism to handle these runtime errors and provide meaningful error messages to the user
+        - Syntax:
+          try {
+            // code which is probable to throw an error
+          } catch (error) {
+            // If error is thrown, handle it here
+          }
+          - An illustration of flow:
+            - If no error: START -> TRY -> END
+            - If error: START -> TRY -> CATCH -> END
+        - 'throw' keyword: Throw custom errors (Error defined by the developer)
+          - Syntax: throw new Error('Custom error message')
+        - finally {}: Executed in both the scenarios
+
+
+    */
+
+    // console.log('START')
+
+    // const jsonString = prompt('Please enter a JSON string')
+
+    // try {
+    //   console.log(JSON.parse(jsonString))
+    // } catch (error) {
+    //   console.log('JSON string was invalid')
+    // }
+
+    // console.log('END')
+
+    /* ------------- */
+    // console.log('START')
+    // const mathExp = prompt('Enter a mathematical expression')
+
+    // try {
+    //   console.log(eval(mathExp))
+    // } catch (error) {
+    //   console.log('Invalid mathemtical expression')
+    // }
+
+    // console.log('END')
+
+    /* ------------- */
+    // console.log('...PREVIOUS CODE')
+
+    // try {
+    //   const num1 = Number(prompt('Please enter the divident'))
+    //   const num2 = Number(prompt('Please enter the divisor'))
+    //   if(num2 == 0) {
+    //     throw new Error('Invalid input: Divisor cannot be zero')
+    //   }
+
+    //   console.log(num1/num2)
+    // } catch (error) {
+    //   console.log(error)
+    // }
+
+    // console.log('NEXT CODE ...')
+
+    /* ------------- */
+    // console.log('...PREVIOUS CODE')
+    // let x
+
+    // const jsonString = prompt('Please enter a JSON string')
+
+    // try {
+    //   let obj = JSON.parse(jsonString)
+    //   x = obj.x 
+    // } catch (error) {
+    //   x = 0
+    //   console.log('Invalid JSON string')
+    // }
+
+    // console.log(x)
+    // console.log('NEXT CODE ...')
+
+    /* ------------- */
+    // let discountPercentage
+    
+    // try {
+    //   const promoCode = prompt('Please enter the promo code')
+    //   if(promoCode != 'PROMO2026001') {
+    //     throw new Error('Invalid promo code')
+    //   }
+    //   discountPercentage = 10
+    // } catch (error) {
+    //   discountPercentage = 0
+    //   console.log(error)
+    // }
+
+    // console.log(`Total discount: ${discountPercentage}%`)
+
+    /* ------------- */
+    // console.log('...PREVIOUS CODE')
+
+    // let transactionCount = 0
+
+    // try {
+    //   throw new Error('Insufficent funds')
+    //   console.log('TRANSACTION SUCCESSFUL')
+    // } catch(error) {
+    //   console.log('TRANSACTION FAILED')
+    // } finally {
+    //   transactionCount++
+    //   console.log(`Total transactions so far: ${transactionCount}`)
+    // }
+
+    // console.log('NEXT CODE ...')
+  </script>
+</body>
+</html>

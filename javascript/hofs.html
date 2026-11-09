@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOFs</title>
+</head>
+<body>
+  <script>
+    /*
+      # HOFs (Higher Order Functions)
+        - A function that:
+          - is passed as an argument to another functions (Callback)
+          - returns another function (Closure)
+
+      # Callbacks: A function passed as an argument to another function
+        - Syntax:
+          - Syntax 1:
+            func1(func2)
+          - Syntax 2:
+            func1(function () {
+              console.log('Function 2')
+            })
+            - With arrow functions
+              func1(() => {
+                console.log('Function 2')
+              })
+
+      # Closures ***:
+        - Inner function continues to have access to the outer function variables even after the outer function has completed execution
+        - In easy words:
+          - Closures = [Functions' scope + it's lexical environment]
+          - Inner function "remembers" it's lexical environment
+
+    */
+    /* --------------------- */
+    // function display(input) {
+    //   console.log(input)
+    // }
+
+    // let num1 = 5
+    // let str = 'Mouad'
+    // let bool1 = true
+    // let obj = { a: 5 }
+    // let arr = [5, 10, 15]
+
+    // function abc() {
+    //   console.log('abc')
+    // }
+
+    // display(abc)
+
+    /* --------------------- */
+    // Syntax 1
+    // function func1(callback) {
+    //   console.log('Function 1')
+    //   callback()
+    // }
+
+    // function func2() {
+    //   console.log('Function 2')
+    // }
+
+    // func1(func2)
+
+    /* --------------------- */
+    // Syntax 2
+    // function func1(callback) {
+    //   console.log('Function 1')
+    //   callback()
+    // }
+
+    // func1(function () {
+    //   console.log('Function 2')
+    // })
+
+    /* --------------------- */
+    // function func1() {
+    //   console.log('Function 1')
+
+    //   function func2() {
+    //     console.log('Function 2')
+    //   }
+    //   func2()
+    // }
+
+    // func1()
+
+    /* --------------------- */
+    // function outer() {
+    //   console.log('Outer function')
+
+    //   function inner() {
+    //     console.log('Inner function')
+    //   }
+    //   return inner
+    // }
+
+    // const x = outer()
+    // x()
+
+    /* --------------------- */
+    // function outer() {
+    //   console.log('Outer function')
+    //   let x = 10
+
+    //   function inner() {
+    //     console.log('Inner function')
+    //     console.log(x)
+    //   }
+    //   inner()
+    // }
+
+    // outer()
+
+    /* --------------------- */
+    // const outer = function () {
+    //   console.log('Outer function')
+    //   let x = 10
+
+    //   const inner = function() {
+    //     console.log('Inner function')
+    //     console.log(x)
+    //   }
+    //   return inner
+    // }
+
+    // const abc = outer()
+    // abc()
+    
+  </script>
+</body>
+</html>
