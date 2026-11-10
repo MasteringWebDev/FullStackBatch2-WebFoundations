@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Higher Order Methods</title>
+</head>
+<body>
+  <script>
+    /*
+      # Array Higher Order Methods
+        - Methods which use callback syntax
+
+        1. forEach() ***
+          - Syntax:
+            arr.forEach((element) => {
+              // Code which executes for each element
+            })
+          - Iterates through the elements of the array and executes the callback for each element
+          - Callback parameters:
+            1. Element
+            2. Index
+          - Does not return anything (undefined)
+          - Does not modify the original array
+
+        2. filter() ***
+          - Syntax:
+            arr.filter((element) => {
+              return "condition"
+            })
+          - Iterates through the elements of the array and executes the callback for each element
+          - Callback parameters:
+            1. Element
+            2. Index
+          - Returns a filtered array based on the condition provided. For each element, a boolean value is returned by the callback. If true, element is added to the filtered array, else the element is skipped
+          - Does not modify the original array
+
+        3. map() ***
+          - Syntax:
+            arr.map((element) => {
+              return "modifiedElement"
+            })
+          - Iterates through the elements of the array and executes the callback for each element
+          - Callback parameters:
+            1. Element
+            2. Index
+          - Returns a modified array based on the return value provided on iteration for each element
+          - Does not modify the original array
+
+    */
+
+    /* --------------- */
+    // let arr = [1, 2, 3, 4, 5]
+
+    // Q1: Iterate through the array, and log each element
+    // for(let i = 0; i < arr.length; i++) {
+    //   console.log(arr[i])
+    // }
+
+    // Q2: Iterate through the array, filter all even numbers
+    // let evenArr = []
+    // for(let i = 0; i < arr.length; i++) {
+    //   if(arr[i] % 2 == 0) {
+    //     evenArr.push(arr[i])
+    //   }
+    // }
+    // console.log(evenArr)
+
+    // Q3: Iterate through the array, return a new array which has the square of elements from the original array
+    // let resultArr = []
+    // for(let i = 0; i < arr.length; i++) {
+    //   resultArr.push(arr[i] ** 2)
+    // }
+    // console.log(resultArr)
+
+    /* --------------- */
+    // let arr = [1, 2, 3, 4, 5]
+    // arr.forEach((element) => {
+    //   console.log(element)
+    // })
+
+    // let students = ['Safiullah', 'Sharon', 'Abian', 'Craig', 'Hassan', 'Mouad', 'Sonal']
+    // students.forEach((student) => {
+    //   console.log(student)
+    // })
+
+    // let marks = [85, 93, 75, 82, 78]
+    // let sum = 0
+    // marks.forEach((m) => {
+    //   sum = sum + m
+    // })
+    // console.log(sum)
+
+    // let students = ['Safiullah', 'Sharon', 'Abian', 'Craig', 'Hassan', 'Mouad', 'Sonal']
+    // students.forEach((student, index) => {
+    //   console.log(student, index)
+    // })
+
+    /* --------------- */
+    // Q: Iterate through the array, filter all even numbers
+    // let arr = [1, 2, 3, 4, 5]
+
+    // let filteredArr = arr.filter((element) => {
+    //   return element % 2 == 0
+    // })
+
+    // console.log(filteredArr)
+
+    // Q: Filter all students who have 5 characters in their name
+    // let students = ['Safiullah', 'Sharon', 'Abian', 'Craig', 'Hassan', 'Mouad', 'Sonal']
+    // let filteredStudents = students.filter(student => {
+    //   return student.length == 5
+    // })
+    // console.log(filteredStudents)
+
+    // Q: Filter all students who are from batch 10
+    // let students = [
+    //   {
+    //     name: 'Safiullah',
+    //     batch: 10,
+    //     course: 'MERN'
+    //   },
+    //   {
+    //     name: 'Sharon',
+    //     batch: 11,
+    //     course: 'MEAN'
+    //   },
+    //   {
+    //     name: 'Abian',
+    //     batch: 12,
+    //     course: 'MEVN'
+    //   },
+    //   {
+    //     name: 'Craig',
+    //     batch: 10,
+    //     course: 'MEAN'
+    //   }
+    // ]
+
+    // // let filteredStudents = students.filter(student => {
+    // //   return student.batch == 10
+    // // })
+
+    // let filteredStudents = students.filter(student => student.batch == 10)
+    // console.log(filteredStudents)
+
+    /* --------------- */
+    // Q: Iterate through the array, return a new array which has the square of elements from the original array
+    // let arr = [1, 2, 3, 4, 5]
+    // let resultArr = arr.map((element) => {
+    //   return element ** 2
+    // })
+    // console.log(resultArr)
+
+    // Q: Return the fullName of the student from the given array
+    // let students = [
+    //   {
+    //     firstName: 'Safiullah',
+    //     lastName: 'Mehrabi',
+    //     batch: 10,
+    //     course: 'MERN'
+    //   },
+    //   {
+    //     firstName: 'Sharon',
+    //     lastName: 'SH',
+    //     batch: 11,
+    //     course: 'MEAN'
+    //   },
+    //   {
+    //     firstName: 'Abian',
+    //     lastName: 'X',
+    //     batch: 12,
+    //     course: 'MEVN'
+    //   },
+    //   {
+    //     firstName: 'Craig',
+    //     lastName: 'Y',
+    //     batch: 10,
+    //     course: 'MEAN'
+    //   }
+    // ]
+
+    // // let studentFullNames = students.map(student => {
+    // //   return student.firstName + ' ' + student.lastName
+    // // })
+
+    // console.log(students.map(s => `${s.firstName} ${s.lastName}`))
+
+    // Q: Return the modified array which is identifical to the original array + has a new field "fullName" of the student
+
+    // let students = [
+    //   {
+    //     firstName: 'Safiullah',
+    //     lastName: 'Mehrabi',
+    //     batch: 10,
+    //     course: 'MERN'
+    //   },
+    //   {
+    //     firstName: 'Sharon',
+    //     lastName: 'SH',
+    //     batch: 11,
+    //     course: 'MEAN'
+    //   },
+    //   {
+    //     firstName: 'Abian',
+    //     lastName: 'X',
+    //     batch: 12,
+    //     course: 'MEVN'
+    //   },
+    //   {
+    //     firstName: 'Craig',
+    //     lastName: 'Y',
+    //     batch: 10,
+    //     course: 'MEAN'
+    //   }
+    // ]
+
+    // let resultArr = students.map(student => {
+    //   let fullName = `${student.firstName} ${student.lastName}`
+    //   return {
+    //     ...student,
+    //     fullName
+    //   }
+    // })
+    // console.log(resultArr)
+
+    // let resultArr = students.map(s => ({ ...s, fullName: `${s.firstName} ${s.lastName}` }))
+    // console.log(resultArr)
+
+    /* --------------- */
+    /* 
+      Question 1: Given list of users, return an array of names of the users who are eligible to vote
+    */
+    // let users = [
+    //   {
+    //     name: 'Safiullah',
+    //     age: 18
+    //   },
+    //   {
+    //     name: 'Sharon',
+    //     age: 17
+    //   },
+    //   {
+    //     name: 'Abian',
+    //     age: 15
+    //   },
+    //   {
+    //     name: 'Craig',
+    //     age: 19
+    //   }
+    // ]
+
+    // // let voters = users.filter(user => user.age >= 18)
+
+    // // let voterNames = voters.map(voter => voter.name)
+
+    // // console.log(voterNames)
+
+    // console.log(users.filter(user => user.age >= 18).map(user => user.name))
+
+    /* 
+      Question 2: Given list of products, return an array of product titles which have a rating of 4+
+    */
+
+    // let products = [
+    //   {
+    //     "id": 1,
+    //     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    //     "price": 109.95,
+    //     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    //     "category": "men's clothing",
+    //     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    //     "rating": {
+    //       "rate": 3.9,
+    //       "count": 120
+    //     }
+    //   },
+    //   {
+    //     "id": 2,
+    //     "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    //     "price": 22.3,
+    //     "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    //     "category": "men's clothing",
+    //     "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    //     "rating": {
+    //       "rate": 4.1,
+    //       "count": 259
+    //     }
+    //   },
+    //   {
+    //     "id": 3,
+    //     "title": "Mens Cotton Jacket",
+    //     "price": 55.99,
+    //     "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    //     "category": "men's clothing",
+    //     "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    //     "rating": {
+    //       "rate": 4.7,
+    //       "count": 500
+    //     }
+    //   },
+    //   {
+    //     "id": 4,
+    //     "title": "Mens Casual Slim Fit",
+    //     "price": 15.99,
+    //     "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    //     "category": "men's clothing",
+    //     "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    //     "rating": {
+    //       "rate": 2.1,
+    //       "count": 430
+    //     }
+    //   },
+    //   {
+    //     "id": 5,
+    //     "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    //     "price": 695,
+    //     "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    //     "category": "jewelery",
+    //     "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+    //     "rating": {
+    //       "rate": 4.6,
+    //       "count": 400
+    //     }
+    //   }
+    // ]
+
+    // console.log(products.filter(p => p.rating.rate >= 4).map(p => p.title))
+
+    /* 
+      Question 3: Given list of products, return an array of products having only the fields id, title, price which cost more than $100.00
+    */
+
+    // console.log(products.filter(p => p.price > 100).map(p => ({ id: p.id, title: p.title, price: p.price })))
+
+  </script>
+</body>
+</html>
