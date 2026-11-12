@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+</head>
+<body>
+  <!-- <h1>Document Object Model</h1>
+  <p class="class1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veritatis, hic sint asperiores eaque ullam. Numquam cum nulla beatae, facere eius nihil aliquid blanditiis cupiditate tempore, expedita obcaecati magni accusamus.</p>
+  <p class="class1" id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem perferendis enim quos, quas, temporibus unde, ullam nemo corporis ducimus magnam tempora ex. Autem voluptas nemo minus. Iste odit aspernatur fugit, sunt, itaque iure rem error quam eum asperiores ea? Sit autem tempore ea asperiores doloribus delectus veniam praesentium ex voluptatum.</p>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas enim quasi vitae vel laudantium modi quisquam quam ex facere laboriosam.</p>
+  <ul id="hobbies-list">
+    <li>Swimming</li>
+    <li class="class1" id="hobby-reading">Reading</li>
+    <li>Singing</li>
+  </ul> -->
+
+  <!-- <input type="text" id="input1"> -->
+
+  <!-- <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2018/08/what-is-a-web-developer.jpg" width="400" id="developer-1"> -->
+
+  <div class="container mt-5">
+    <div class="row" id="product-list">
+      <div class="col-md-3 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard2_b4d30e02-00f0-4b78-82c0-07440c4cc5f0_1800x.png?v=1752731162" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Headphone 1</h5>
+            <p class="card-text">INR 2,499</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-warning w-100">Add to cart</a>
+              <a href="#" class="btn btn-success w-100">Buy now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard2_b4d30e02-00f0-4b78-82c0-07440c4cc5f0_1800x.png?v=1752731162" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Headphone 1</h5>
+            <p class="card-text">INR 2,499</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-warning w-100">Add to cart</a>
+              <a href="#" class="btn btn-success w-100">Buy now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard2_b4d30e02-00f0-4b78-82c0-07440c4cc5f0_1800x.png?v=1752731162" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Headphone 1</h5>
+            <p class="card-text">INR 2,499</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-warning w-100">Add to cart</a>
+              <a href="#" class="btn btn-success w-100">Buy now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard2_b4d30e02-00f0-4b78-82c0-07440c4cc5f0_1800x.png?v=1752731162" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Headphone 1</h5>
+            <p class="card-text">INR 2,499</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-warning w-100">Add to cart</a>
+              <a href="#" class="btn btn-success w-100">Buy now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.min.js" integrity="sha384-89aa4glufciPv46aKltztWQEmk+Tu9W2RhzXr6VcnUUEub7F8+06RcL2RYLCOHUq" crossorigin="anonymous"></script>
+  <script>
+    /*
+      # DOM (Document Object Model)
+        - Refers to the object representaion of the "HTML document tree"
+        - Reserved keyword: document
+        - Nodes: Represents individual HTML elements in the DOM tree
+
+        - Properties:
+          - body: Refers to the body node of the HTML document
+          - head: Refers to the head node of the HTML document
+          - title: Refers to the title of the HTML document
+          - children: Returns all child nodes of a given node
+          - firstElementChild: Returns the first child node of a given node
+          - lastElementChild: Returns the last child node of a given node
+        - Methods: 
+          - getElementById('id') ***: Returns the node which has the specified id
+          - getElementsByClassName('class') ***: Returns an HTMLCollection (array of nodes) which have the specified class
+          - getElementsByTagName('tag'): Returns an HTMLCollection (array of nodes) which have the specified tag
+
+      # DOM Content Manipulation
+        - innerText: Refers to the inner text content of the node (String)
+        - innerHTML: Refers to the inner HTML content of the node (String)
+          - Similar to innerText but you can also include HTML tags
+        - value: Refers to the data entered within the form field node
+
+      # DOM Attribute Manipulation
+        - Syntax: node.attribute
+        - Exception: 'class' attribute
+          - node.classList: Returns a collection of classes assigned to that node
+            - node.classList.add('newClass'): Add a new class
+            - node.classList.remove('existingClass'): Remove existing class
+
+      # DOM Style Manipulation
+        - Single style property
+          - node.style.property (property in camelCase)
+        - Multiple style properties
+          - node.style.cssText = 'property1: value1; property2: value2; ...'
+
+      # DOM Node Manipulation ***
+        - document.createElement('tag'): Creates a new tag node
+        - node.appendChild(childNode): Appends a child node to the parent node
+        - node.append(childNode1, childNode2, ...): Append multiple child nodes to the parent node
+        - node.remove(): Remove the specific node from the DOM tree
+        
+
+    */
+
+    // document.getElementById('para1').innerHTML = 'Refers to the object representaion of the <b>HTML document tree</b>'
+
+    // document.getElementById('developer-1').width = '100'
+    // document.getElementById('developer-1').src = 'https://images.ctfassets.net/pdf29us7flmy/8BeGNQFpUzIyckf3POYTt/3c6f9d9836cc8d5438ae6a4ddd156c49/4He9LjIo.png'
+
+    // document.getElementById('para1').classList.add('class2')
+    // document.getElementById('para1').classList.remove('class1')
+
+    // document.getElementById('para1').style.color = 'green'
+    // document.getElementById('para1').style.backgroundColor = '#eee'
+
+    // document.getElementById('para1').style.color = '#555'
+    // document.getElementById('para1').style.backgroundColor = 'lightgrey'
+    // document.getElementById('para1').style.borderRadius = '6px'
+    // document.getElementById('para1').style.padding = '12px'
+    // document.getElementById('para1').style.cssText = 'color: #555; background-color: lightgrey; border-radius: 6px; padding: 12px;'
+
+    // const parent = document.getElementById('hobbies-list')
+
+    // const newHobbyLi1 = document.createElement('li')
+    // newHobbyLi1.innerText = 'Dancing'
+
+    // const newHobbyLi2 = document.createElement('li')
+    // newHobbyLi2.innerText = 'Progamming'
+
+    // parent.append(newHobbyLi1, newHobbyLi2)
+
+    // document.getElementById('hobby-reading').remove()
+
+    // document.getElementById('hobbies-list').remove()
+
+    /*
+      <div class="col-md-3"> ✅
+        <div class="card" style="width: 18rem;"> ✅
+          <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard2_b4d30e02-00f0-4b78-82c0-07440c4cc5f0_1800x.png?v=1752731162" class="card-img-top"> ✅
+          <div class="card-body"> ✅
+            <h5 class="card-title">Headphone 1</h5> ✅
+            <p class="card-text">INR 2,499</p> ✅
+            <div class="d-flex gap-2"> ✅
+              <button class="btn btn-warning w-100">Add to cart</button> ✅
+              <button class="btn btn-success w-100">Buy now</button> ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    */
+
+    const productList = document.getElementById('product-list')
+
+    const colDiv = document.createElement('div')
+    colDiv.classList.add('col-md-3', 'mt-2')
+
+    const cardDiv = document.createElement('div')
+    cardDiv.classList.add('card')
+    cardDiv.style.width = '18rem'
+
+    const productImg = document.createElement('img')
+    productImg.classList.add('card-img-top')
+    productImg.src = 'https://zebronics.com/cdn/shop/files/Zeb-thunder-pro-blue-pic-1.jpg?v=1775891282&width=2000'
+
+    const cardBodyDiv = document.createElement('div')
+    cardBodyDiv.classList.add('card-body')
+
+    const productTitleH5 = document.createElement('h5')
+    productTitleH5.classList.add('card-title')
+    productTitleH5.innerText = 'Headphone 1'
+
+    const productPriceP = document.createElement('p')
+    productPriceP.classList.add('card-text')
+    productPriceP.innerText = 'INR 2,499'
+
+    const buttonContainerDiv = document.createElement('div')
+    buttonContainerDiv.classList.add('d-flex', 'gap-2')
+
+    const addToCardBtn = document.createElement('button')
+    addToCardBtn.classList.add('btn', 'btn-warning', 'w-100')
+    addToCardBtn.innerText = 'Add to cart'
+
+    const buyNowBtn = document.createElement('button')
+    buyNowBtn.classList.add('btn', 'btn-success', 'w-100')
+    buyNowBtn.innerText = 'Buy now'
+
+    buttonContainerDiv.append(addToCardBtn, buyNowBtn)
+    cardBodyDiv.append(productTitleH5, productPriceP, buttonContainerDiv)
+    cardDiv.append(productImg, cardBodyDiv)
+    colDiv.append(cardDiv)
+
+    productList.append(colDiv)
+  </script>
+</body>
+</html>
