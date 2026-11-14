@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Handling</title>
+  <style>
+    .form-section {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Job Application Forms</h1>
+
+  <form>
+    <div class="form-section">
+      <label for="fullname">Full name</label>
+      <input type="text" id="fullname" autocomplete="off">
+    </div>
+    <div class="form-section">
+      <label for="email">Email</label>
+      <input type="email" id="email" autocomplete="off">
+    </div>
+    <div class="form-section">
+      Skills
+      <input type="checkbox" class="skills" value="HTML" id="skills-HTML">
+      <label for="skills-HTML">HTML</label>
+      <input type="checkbox" class="skills" value="CSS" id="skills-CSS">
+      <label for="skills-CSS">CSS</label>
+      <input type="checkbox" class="skills" value="JAVASCRIPT" id="skills-JAVASCRIPT">
+      <label for="skills-JAVASCRIPT">JAVASCRIPT</label>
+    </div>
+    <div class="form-section">
+      <label for="role">Role</label>
+      <select id="role">
+        <option value="FED">Frontend Developer</option>
+        <option value="BED">Backend Developer</option>
+        <option value="FSD">Full Stack Developer</option>
+      </select>
+    </div>
+    <div class="form-section">
+      Have you already resigned?
+      <input type="radio" name="resigned" class="resigned" value="YES" id="resigned-yes">
+      <label for="resigned-yes">Yes</label>
+      <input type="radio" name="resigned" class="resigned" value="NO" id="resigned-no">
+      <label for="resigned-no">No</label>
+    </div>
+    <div class="form-section">
+      <label for="whyjoinus">Why do you want to join us?</label><br>
+      <textarea rows="10" cols="40" id="whyjoinus"></textarea>
+    </div>
+    <div class="form-section">
+      <label for="resume">Resume</label>
+      <input type="file" id="resume">
+    </div>
+    <div class="form-section">
+      <button type="reset">Reset</button>
+      <button type="button" onclick="handleFormData()">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    function handleFormData() {
+      const fullName = document.getElementById('fullname').value
+      const email = document.getElementById('email').value
+
+      const skills = document.getElementsByClassName('skills')
+      const selectedSkills = Array.from(skills).filter(skill => skill.checked)
+      const selectedSkillValues = selectedSkills.map(skillNode => skillNode.value)
+
+      const role = document.getElementById('role').value
+
+      const resigned = document.getElementsByClassName('resigned')
+      const selectedResigned = Array.from(resigned).find(option => option.checked)
+
+      const whyjoinus = document.getElementById('whyjoinus').value
+
+      const files = document.getElementById('resume').files
+
+      const userData = {
+        fullName,
+        email,
+        skills: selectedSkillValues,
+        role,
+        hasResigned: selectedResigned.value,
+        whyjoinus,
+        resumeFileName: files[0].name
+      }
+
+      console.log('Form submitted. User data: ', userData)
+    }
+  </script>
+</body>
+</html>
