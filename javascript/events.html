@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+</head>
+<body>
+  <!-- <input type="text" onclick="test()"> -->
+  <!-- <input type="text" ondblclick="test()"> -->
+  <!-- <input type="text" onmouseover="test()"> -->
+  <!-- <input type="text" onmouseout="test()"> -->
+  <!-- <input type="text" onmousemove="test()"> -->
+  <!-- <input type="text" oninput="test()"> -->
+  <!-- <input type="text" onchange="test()"> -->
+  <!-- <input type="text" onkeyup="test()"> -->
+  <!-- <input type="text" onfocus="test()"> -->
+  <!-- <input type="text" onblur="test()"> -->
+
+  <!-- <input type="text" id="fullname">
+  <button onclick="register()">Register</button> -->
+
+  <div class="container mt-5">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="product-name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input type="text" class="form-control" id="product-price">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Image URL</label>
+      <input type="text" class="form-control" id="product-imageURL">
+    </div>
+    <button class="btn btn-primary" onclick="addNewProduct()">Add product</button>
+    <div class="row" id="product-list">
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.min.js" integrity="sha384-89aa4glufciPv46aKltztWQEmk+Tu9W2RhzXr6VcnUUEub7F8+06RcL2RYLCOHUq" crossorigin="anonymous"></script>
+  <script>
+    /*
+      # Events: Any activity performed by the user on the browser
+        - Event Handling: Create a logic which executes whenever a specific event occurs
+        - 2 ways to handle events:
+          1. Inline event handlers
+          2. Event listeners
+
+        - Inline event handlers:
+          - Used as attributes within HTML tags
+          - Syntax: <tag eventHandler="[JS LOGIC]" ></tag>
+
+          - Examples:
+            - onclick: 'click' event ***
+            - ondblclick: 'dblclick' event (Double click)
+            - onmouseover: 'mouseover' event (Hover) ***
+            - onmouseout: 'mouseout' event (Opposite of Hover)
+            - onmousemove: 'mousemove' event (Cursor movement)
+            - oninput: 'input' event (Tracks every input change within a text field) ***
+            - onchange: 'change' event (Tracks overall change within a text field) ***
+            - onkeyup: 'keyup' event (Keyboard key event)
+            - onfocus: 'focus' event (Element gets focus) ***
+            - onblur: 'blur' event (Element looses focus) ***
+            - onload: 'load' event (HTML document load)
+
+    */
+
+    // function test() {
+    //   console.log('test')
+    // }
+
+    // function register() {
+    //   const fullName = document.getElementById('fullname').value
+    //   console.log(fullName)
+    //   document.getElementById('fullname').value = ''
+    // }
+
+    function createProductCard(product) {
+      const productList = document.getElementById('product-list')
+  
+      const colDiv = document.createElement('div')
+      colDiv.classList.add('col-md-3', 'mt-2')
+  
+      const cardDiv = document.createElement('div')
+      cardDiv.classList.add('card')
+      cardDiv.style.width = '18rem'
+  
+      const productImg = document.createElement('img')
+      productImg.classList.add('card-img-top')
+      productImg.src = product.imageURL
+      productImg.height = '280'
+  
+      const cardBodyDiv = document.createElement('div')
+      cardBodyDiv.classList.add('card-body')
+  
+      const productTitleH5 = document.createElement('h5')
+      productTitleH5.classList.add('card-title')
+      productTitleH5.innerText = product.name
+  
+      const productPriceP = document.createElement('p')
+      productPriceP.classList.add('card-text')
+      productPriceP.innerText = `INR ${product.price}`
+  
+      const buttonContainerDiv = document.createElement('div')
+      buttonContainerDiv.classList.add('d-flex', 'gap-2')
+  
+      const addToCardBtn = document.createElement('button')
+      addToCardBtn.classList.add('btn', 'btn-warning', 'w-100')
+      addToCardBtn.innerText = 'Add to cart'
+  
+      const buyNowBtn = document.createElement('button')
+      buyNowBtn.classList.add('btn', 'btn-success', 'w-100')
+      buyNowBtn.innerText = 'Buy now'
+  
+      buttonContainerDiv.append(addToCardBtn, buyNowBtn)
+      cardBodyDiv.append(productTitleH5, productPriceP, buttonContainerDiv)
+      cardDiv.append(productImg, cardBodyDiv)
+      colDiv.append(cardDiv)
+  
+      productList.append(colDiv)
+    }
+
+    const products = [
+      {
+        name: 'Headphone 1',
+        price: '2,499',
+        imageURL: 'https://images.unsplash.com/photo-1638803782506-d975a6809f43?q=80&w=2380&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'
+      },
+      {
+        name: 'Headphone 2',
+        price: '5,799',
+        imageURL: 'https://images.unsplash.com/photo-1615375834706-98afda0d534f?q=80&w=2726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'
+      },
+      {
+        name: 'Headphone 3',
+        price: '6,399',
+        imageURL: 'https://images.unsplash.com/photo-1660391532247-4a8ad1060817?q=80&w=2381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'
+      },
+    ]
+
+    products.forEach(product => createProductCard(product))
+
+    function addNewProduct() {
+      const name = document.getElementById('product-name').value
+      const price = document.getElementById('product-price').value
+      const imageURL = document.getElementById('product-imageURL').value
+
+      const newProduct = {
+        name,
+        price,
+        imageURL
+      }
+
+      createProductCard(newProduct)
+    }
+
+  </script>
+</body>
+</html>
