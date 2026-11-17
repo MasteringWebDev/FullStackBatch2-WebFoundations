@@ -8,6 +8,11 @@
     .form-section {
       margin-top: 10px;
     }
+
+    .error-text {
+      color: red;
+      font-size: 12px;
+    }
   </style>
 </head>
 <body>
@@ -17,10 +22,12 @@
     <div class="form-section">
       <label for="fullname">Full name</label>
       <input type="text" id="fullname" autocomplete="off">
+      <div id="fullname-error" class="error-text"></div>
     </div>
     <div class="form-section">
       <label for="email">Email</label>
       <input type="email" id="email" autocomplete="off">
+      <div id="email-error" class="error-text"></div>
     </div>
     <div class="form-section">
       Skills
@@ -34,6 +41,7 @@
     <div class="form-section">
       <label for="role">Role</label>
       <select id="role">
+        <option value="NA">Select</option>
         <option value="FED">Frontend Developer</option>
         <option value="BED">Backend Developer</option>
         <option value="FSD">Full Stack Developer</option>
@@ -83,12 +91,134 @@
         email,
         skills: selectedSkillValues,
         role,
-        hasResigned: selectedResigned.value,
+        hasResigned: selectedResigned ? selectedResigned.value : 'NA',
         whyjoinus,
-        resumeFileName: files[0].name
+        resumeFileName: files[0] ? files[0].name : 'NA'
       }
 
-      console.log('Form submitted. User data: ', userData)
+      console.log('User data collected ✅', userData)
+
+      const result = validateFormData(userData, files)
+      if(result) {
+        console.log('User data validated and submitted ✅')
+      } else {
+        console.log('There are some errors in your responses, please correct it ❌')
+      }
+    }
+
+    /*
+      # Validation rules:
+        1. Full Name:
+          - Should not be empty ✅
+          - At least have 3 characters ✅
+        2. Email:
+          - Should not be empty ✅
+          - Should have '@' ✅
+          - Should have '.' ✅
+          - At least 3 characters before @ ✅
+          - At least 2 characters after last . ✅
+        3. Skills:
+          - At least 1 skill should be selected ✅
+        4. Role:
+          - A valid selection ✅
+        5. Already resigned?
+          - A valid selection ✅
+        6. Why do you want to join us?
+          - Should not be empty ✅
+          - At least have 300 characters ✅
+        7. Resume
+          - A file should be selected ✅
+          - File type should be PDF
+    */
+
+    function validateFormData(userData, files) {
+      resetErrorText()
+      let result = true
+
+      const {
+        fullName,
+        email,
+        skills,
+        role,
+        hasResigned,
+        whyjoinus,
+        resumeFileName
+      } = userData
+
+      /* 1. Full Name: */
+      if(!fullName || fullName.length < 3) {
+        document.getElementById('fullname').style.border = '0.15em solid red'
+        document.getElementById('fullname-error').innerText = 'Invalid fullname.'
+        result = false
+      }
+
+      /* 2. Email */
+      if(!email || !email.includes('@') || !email.includes('.')) {
+        document.getElementById('email').style.border = '0.15em solid red'
+        document.getElementById('email-error').innerText = 'Invalid email.'
+        result = false
+      }
+
+      let atCharIndex = email.indexOf('@')
+      if(atCharIndex < 3) {
+        document.getElementById('email').style.border = '0.15em solid red'
+        if(!document.getElementById('email-error').innerText)
+          document.getElementById('email-error').innerText = `Invalid email. At least 3 characters before '@' .`
+        result = false
+      }
+
+      let lastDotIndex = email.lastIndexOf('.')
+      let totalChars = email.length
+      if(totalChars - lastDotIndex < 3) {
+        document.getElementById('email').style.border = '0.15em solid red'
+        if(!document.getElementById('email-error').innerText)
+          document.getElementById('email-error').innerText = `Invalid email. At least 2 characters after last '.' .`
+        result = false
+      }
+
+      /* 3. Skills */
+      if(!skills.length) {
+        console.log('Please select at least one skill.')
+        result = false
+      }
+
+      /* 4. Role */
+      if(role == 'NA') {
+        console.log('Please select a valid role.')
+        result = false
+      }
+
+      /* 5. Already resigned? */
+      if(hasResigned == 'NA') {
+        console.log(`Please select one option for 'Have you already resigned?'.`)
+        result = false
+      }
+
+      /* 6. Why do you want to join us? */
+      if(!whyjoinus || whyjoinus.length < 300) {
+        console.log('Invalid response. At least 300 characers.')
+        result = false
+      }
+
+      /* 7. Resume */
+      if(resumeFileName == 'NA') {
+        console.log('File not selected. Please upload a file.')
+        result = false
+      }
+
+      if(files[0] && files[0].type != 'application/pdf') {
+        console.log('Invalid file selected. Only PDF allowed.')
+      }
+
+      return result
+    }
+
+    function resetErrorText() {
+      document.getElementById('fullname').style.border = '0.15em solid black'
+      document.getElementById('fullname-error').innerText = ''
+
+      document.getElementById('email').style.border = '0.15em solid black'
+      document.getElementById('email-error').innerText = ''
     }
   </script>
 </body>
