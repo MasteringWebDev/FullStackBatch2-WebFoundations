@@ -1,0 +1,22 @@
+:root {
+  --primary-bg-color: #1A2B49;
+  --bg-green: #1B6535;
+}
+
+body {
+  background: #F3F5F8;
+}
+
+#banking-navbar-container {
+  background-color: var(--primary-bg-color) !important;
+}
+
+.list-group-item.active, .btn-primary {
+  background-color: var(--primary-bg-color) !important;
+  border-color: var(--primary-bg-color) !important;
+}
+
+.btn-success {
+  background-color: var(--bg-green) !important;
+  border-color: var(--bg-green) !important;
+}

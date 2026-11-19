@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/logo.png">
+  <title>MockGlobe International Bank</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- ------------- NAVBAR ------------- -->
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark" id="banking-navbar-container">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        MockGlobe International Bank
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Loans</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Welcome, Mouad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ------------- MAIN ------------- -->
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-accounts-list" data-bs-toggle="list" href="#list-accounts" role="tab" aria-controls="list-accounts">
+            <img src="assets/accounts.png" alt="Logo" width="20" class="d-inline-block align-text-top me-2">
+            Accounts
+          </a>
+          <a class="list-group-item list-group-item-action" id="list-add-money-list" data-bs-toggle="list" href="#list-add-money" role="tab" aria-controls="list-add-money">
+            <img src="assets/add-money.png" alt="Logo" width="20" class="d-inline-block align-text-top me-2">
+            Add Money
+          </a>
+          <a class="list-group-item list-group-item-action" id="list-send-money-list" data-bs-toggle="list" href="#list-send-money" role="tab" aria-controls="list-send-money">
+            <img src="assets/send-money.png" alt="Logo" width="20" class="d-inline-block align-text-top me-2">
+            Send Money
+          </a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <!-- ACCOUNTS -->
+          <div class="tab-pane fade show active" id="list-accounts" role="tabpanel" aria-labelledby="list-accounts-list">
+            <div class="bg-white p-4 rounded border border-light-subtle mb-2">
+              <h2 class="fs-4">Acount details</h2>
+              <div class="row">
+                <div class="col-6">
+                  <h3 class="fs-6 text-body-secondary">Account holder</h3>
+                  <p class="fw-semibold">Mouad El Khabar</p>
+                </div>
+                <div class="col-6">
+                  <h3 class="fs-6 text-body-secondary">Account type</h3>
+                  <p class="fw-semibold">Checking</p>
+                </div>
+                <div class="col-6">
+                  <h3 class="fs-6 text-body-secondary">Account number</h3>
+                  <p class="fw-semibold">**********5201</p>
+                </div>
+                <div class="col-6">
+                  <h3 class="fs-6 text-body-secondary">Routing number</h3>
+                  <p class="fw-semibold">476983637</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded border border-light-subtle mb-2">
+              <div class="d-flex justify-content-between align-items-start">
+                <p class="fs-6">CHECKING ACCOUNT</p>
+                <span class="badge rounded-pill text-bg-success">ACTIVE</span>
+              </div>
+              <h3 class="fs-6 text-body-secondary">Account balance</h3>
+              <h3 class="display-3 bg-light p-2" style="font-family: serif;" id="account-balance"></h3>
+            </div>
+            <div class="bg-white p-4 rounded border border-light-subtle mb-2">
+              <h2 class="fs-4">Account statement</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="fw-light small text-body-secondary">DATE</th>
+                    <th class="fw-light small text-body-secondary">DESCRIPTION</th>
+                    <th class="fw-light small text-body-secondary">AMOUNT</th>
+                    <th class="fw-light small text-body-secondary">BALANCE</th>
+                  </tr>
+                </thead>
+                <tbody id="statement-list"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ADD MONEY -->
+          <div class="tab-pane fade" id="list-add-money" role="tabpanel" aria-labelledby="list-add-money-list">
+            <div class="bg-white p-4 rounded border border-light-subtle mb-2">
+              <p class="small text-success fw-semibold">CREDIT · MONEY IN</p>
+              <h2 class="fs-4">Add Money</h2>
+              <form id="deposit-form">
+                <div class="mb-3">
+                  <label for="deposit-type" class="form-label">Deposit type</label>
+                  <select class="form-select" id="deposit-type">
+                    <option value="ATM Deposit">ATM Deposit</option>
+                    <option value="Salary (Payroll)">Salary (Payroll)</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="deposit-amount" class="form-label">Amount</label>
+                  <input type="number" class="form-control" id="deposit-amount" placeholder="$2500.00">
+                </div>
+                <div class="mb-3">
+                  <label for="deposit-memo" class="form-label">Memo</label>
+                  <input type="text" class="form-control" id="deposit-memo" placeholder="e.g. November paycheck">
+                </div>
+                <button type="button" class="btn btn-success w-100" onclick="deposit()">Deposit money</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- SEND MONEY -->
+          <div class="tab-pane fade" id="list-send-money" role="tabpanel" aria-labelledby="list-send-money-list">
+            <div class="bg-white p-4 rounded border border-light-subtle mb-2">
+              <p class="small text-danger fw-semibold">DEBIT · MONEY OUT</p>
+              <h2 class="fs-4">Send Money</h2>
+              <form id="transfer-form">
+                <div class="mb-3">
+                  <label for="transfer-type" class="form-label">Transfer type</label>
+                  <select class="form-select" id="transfer-type">
+                    <option value="ACH Transfer">ACH Transfer</option>
+                    <option value="WIRE Transfer">Wire Transfer</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="form-label">Recipient name</label>
+                  <input type="text" class="form-control" id="recipient-name" placeholder="Sharon">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-email" class="form-label">Recipient email address</label>
+                  <input type="email" class="form-control" id="recipient-email" placeholder="sharon@gmail.com">
+                </div>
+                <div class="mb-3">
+                  <label for="transfer-amount" class="form-label">Amount</label>
+                  <input type="number" class="form-control" id="transfer-amount" placeholder="$2500.00">
+                </div>
+                <div class="mb-3">
+                  <label for="transfer-memo" class="form-label">Memo</label>
+                  <input type="text" class="form-control" id="transfer-memo" placeholder="e.g. Travel">
+                </div>
+                <button type="button" class="btn btn-primary w-100" onclick="transfer()">Send money</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.min.js" integrity="sha384-89aa4glufciPv46aKltztWQEmk+Tu9W2RhzXr6VcnUUEub7F8+06RcL2RYLCOHUq" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+</html>
