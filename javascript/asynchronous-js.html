@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous JavaScript</title>
+  <style>
+    #clock {
+      padding: 10px;
+      background: #eee;
+      margin: 10px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 3em;
+    }
+  </style>
+</head>
+<body>
+  <!-- <button onclick="startTimer()">START TIMER</button>
+  <h1 id="timer-text"></h1> -->
+
+  <!-- <h1>Timer</h1>
+  <input type="text" placeholder="Enter time in seconds" id="timer-input"> 
+  <button onclick="startTimer()">START</button>
+  <h1 id="timer-text"></h1> -->
+
+  <!-- <button onclick="stop()">Stop button</button> -->
+
+  <!-- <button onclick="fireBomb()">Fire bomb</button>
+  <button onclick="diffuseBomb()">Diffuse bomb</button>
+  <br>
+  <img id="bomb-example" width="100"> -->
+
+  <!-- <button onclick="startTimer()">START</button>
+  <button onclick="stopTimer()">STOP</button>
+  <div id="clock">
+    <span id="minutes"></span> 
+    :
+    <span id="seconds"></span>
+  </div> -->
+
+  <script>
+    /*
+      # Asynchronous JavaScript
+        - Synchronous code:
+          - Executed one line at a time
+          - Each expression waits for the previous expression to finish
+        - Asynchronous code:
+          - Does not block the execution of the synchronous code
+          - Handled in the background and executed later
+
+        - JavaScript is a single-threaded language
+          - JavaScript has one main thread
+          - It executes one operation at a time
+          - Still, JavaScript can handle asynchronous operations with the help of:
+            - Web APIs
+            - Task Queues
+            - Event Loop
+
+        - Timer methods:
+          1. setTimeout() ***: Used to execute code after a specified time
+            - Syntax:
+            setTimeout(() => {
+              // code to execute after sometime
+            }, timeInMs)
+            - Returns: timerId
+            - clearTimeout(timerId): Clear the timeout created by setTimeout
+          2. setInterval() ***: Used to execute code repeatedly after specified time intervals
+            - Syntax:
+            setTimeout(() => {
+              // code to execute after sometime
+            }, timeInMs)
+            - Returns: timerId
+            - clearInterval(timerId): Clear the interval created by setInterval
+
+    */
+
+    /* --------------- */
+    // console.log('Mouad')
+    // console.log('Sharon')
+    // console.log('Abian')
+    // console.log('Sonal')
+
+    // console.log('Mouad')
+    // setTimeout(() => {
+    //   console.log('Mouad')
+    // }, 3000)
+
+    // console.log(1)
+    // console.log(2)
+    // console.log(3)
+    // console.log(4)
+    // console.log(5)
+
+    // console.log(1)
+    // console.log(2)
+    // setTimeout(() => {
+    //   console.log(3)
+    // }, 3000)
+    // console.log(4)
+    // console.log(5)
+
+    // console.log(1)
+    // console.log(2)
+    // setTimeout(() => {
+    //   console.log(3)
+    // }, 0)
+    // console.log(4)
+    // console.log(5)
+
+    // let timerId = setTimeout(() => console.log('test'), 5000)
+    // function stop() {
+    //   clearTimeout(timerId)
+    // }
+
+    // setInterval(() => {
+    //   console.log('Hi')
+    // }, 1000)
+
+    // let count = 1
+    // setInterval(() => {
+    //   console.log(count++)
+    // }, 1000)
+
+    /* --------------- */
+    // # Example 1 (setTimeout): Create a timer for 10 seconds
+    // function startTimer() {
+    //   setTimeout(() => {
+    //     document.getElementById('timer-text').innerText = 'TIME UP!'
+    //   }, 10000)
+    // }
+
+    // # Example 2 (setTimeout): Create a custom timer
+    // function startTimer() {
+    //   const timeInS = Number(document.getElementById('timer-input').value)
+
+    //   setTimeout(() => {
+    //     document.getElementById('timer-text').innerText = 'TIME UP!'
+    //   }, timeInS * 1000)
+    // }
+
+    // # Example 3 (setTimeout)
+    // let timerId
+
+    // function fireBomb() {
+    //   document.getElementById('bomb-example').src = 'assets/fire-bomb.png'
+    //   timerId = setTimeout(() => {
+    //     document.getElementById('bomb-example').src = 'assets/bomb-explosion.gif'
+    //   }, 5000)
+    // }
+
+    // function diffuseBomb() {
+    //   clearTimeout(timerId)
+    //   document.getElementById('bomb-example').src = 'assets/diffuse-bomb.png'
+    // }
+
+    /* --------------- */
+    // # Example 1 (setInterval):
+    // let timerId
+    // let count = 50
+    // function startTimer() {
+    //   timerId = setInterval(() => {
+    //     let minutes = parseInt(count / 60)
+    //     let seconds = count % 60
+
+    //     document.getElementById('minutes').innerText = minutes >= 10 ? minutes : `0${minutes}`
+    //     document.getElementById('seconds').innerText = seconds >= 10 ? seconds : `0${seconds}`
+    //     count++
+    //   }, 1000)
+    // }
+
+    // function stopTimer() {
+    //   clearInterval(timerId)
+    // }
+  </script>
+</body>
+</html>
