@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callbacks</title>
+</head>
+<body>
+  <script>
+    /*
+      # Callbacks: A function passed as an argument to another function "so that it can be executed later"
+        - Handle asynchronous code
+    */
+
+    // Synchronous code example for callbacks
+    // function func1(callback) {
+    //   console.log('Function 1')
+    //   callback()
+    // }
+
+    // func1(function () {
+    //   console.log('Function 2')
+    // })
+
+    // Asynchronous code example
+    // function func1(callback) {
+    //   console.log('Function 1')
+    //   setTimeout(() => {
+    //     callback()
+    //   }, 5000)
+    // }
+
+    // func1(function () {
+    //   console.log('Function 2')
+    // })
+
+    /*
+      # Example 1: Log statuses of a food order
+        1. Instantly: ORDER RECEIVED, PREPARING NOW ...
+        2. After 10 seconds: ORDER PREPARED
+    */
+
+    // function receiveOrder(callback) {
+    //   console.log('ORDER RECEIVED, PREPARING NOW ...')
+    //   setTimeout(() => {
+    //     callback()
+    //   }, 10000)
+    // }
+
+    // receiveOrder(function () {
+    //   console.log('ORDER PREPARED')
+    // })
+
+    /*
+      # Example 2: Inform the user once the data processing completed
+    */
+
+    // function processData(callback) {
+    //   setTimeout(() => {
+    //     console.log('DONE')
+    //     callback()
+    //   }, 8000)
+    // }
+    
+    // processData(function () {
+    //   alert('Data processing completed')
+    // })
+
+    /*
+      # Example 3: Fetch data from the server, then process that data
+        1. Fetching data from the server: 7 seconds
+        2. Processing that data: 5 seconds
+
+        Total time: 7s + 5s = 12 s
+    */
+
+    function fetchData(callback) {
+      console.log('FETCHING DATA FROM THE SERVER ...')
+
+      setTimeout(() => {
+        console.log('FETCHED DATA SUCCESSFULLY ✅')
+        callback()
+      }, 7000)
+    }
+
+    // function processData() {
+    //   console.log('PROCESSING DATA NOW ...')
+
+    //   setTimeout(() => {
+    //     console.log('PROCESSED DATA SUCCESSFULLY ✅')
+    //   }, 5000)
+    // }
+
+    // fetchData(processData)
+
+    fetchData(function () {
+      console.log('PROCESSING DATA NOW ...')
+
+      setTimeout(() => {
+        console.log('PROCESSED DATA SUCCESSFULLY ✅')
+      }, 5000)
+    })
+
+  </script>
+</body>
+</html>
