@@ -27,6 +27,7 @@
 
     const placeOrder = () => {
       console.log('Order placed ✅')
+      
       orderBeingPrepared(() => {
         orderPrepared(() => {
           orderHandedOver(() => {
