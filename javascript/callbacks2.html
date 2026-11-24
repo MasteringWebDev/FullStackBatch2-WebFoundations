@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Hell</title>
+</head>
+<body>
+  <button onclick="placeOrder()">Place order</button>
+  <script>
+    /*
+      # Callback Hell (Pyramid of doom): The structure formed when a callback function is within another callback functuon and the pattern continues ...
+        - This is a disadvantage of callbacks
+        - Hence, the alternative approaches like promises and async await should be used to handle such asynchronous code
+
+        - Example: Order tracking app
+          - Instantly: Order placed ✅
+          - After 2 seconds: Order is being prepared 🥘
+          - After 10 seconds: Order prepared 🎉
+          - After 5 seconds: Order handed over to the delivery person 📦
+          - After 3 seconds: Order is on the way 🛵
+          - After 8 seconds: Order reached it's desination 📌
+          - After 4 seconds: Order has been delivered. Enjoy your meal 🍽️
+
+          Total order processing time = 2+10+5+3+8+4 = 32 seconds
+    */
+
+    const placeOrder = () => {
+      console.log('Order placed ✅')
+      orderBeingPrepared(() => {
+        orderPrepared(() => {
+          orderHandedOver(() => {
+            orderOnTheWay(() => {
+              orderReachedDestination(() => {
+                orderDelivered()
+              })
+            })
+          })
+        })
+      })
+    }
+
+    const orderBeingPrepared = (callback) => {
+      setTimeout(() => {
+        console.log('Order is being prepared 🥘')
+        callback()
+      }, 2000)
+    }
+
+    const orderPrepared = (callback) => {
+      setTimeout(() => {
+        console.log('Order prepared 🎉')
+        callback()
+      }, 10000)
+    }
+
+    const orderHandedOver = (callback) => {
+      setTimeout(() => {
+        console.log('Order handed over to the delivery person 📦')
+        callback()
+      }, 5000)
+    }
+
+    const orderOnTheWay = (callback) => {
+      setTimeout(() => {
+        console.log('Order is on the way 🛵')
+        callback()
+      }, 3000)
+    }
+
+    const orderReachedDestination = (callback) => {
+      setTimeout(() => {
+        console.log(`Order reached it's desination 📌`)
+        callback()
+      }, 8000)
+    }
+
+    const orderDelivered = () => {
+      setTimeout(() => {
+        console.log(`Order has been delivered. Enjoy your meal 🍽️`)
+      }, 4000)
+    }
+  </script>
+</body>
+</html>
