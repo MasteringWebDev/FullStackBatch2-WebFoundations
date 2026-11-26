@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #fdd7ad;
+  --secondary-color: #a56a43;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.navbar.bg-dark {
+  background: linear-gradient(180deg, rgba(165, 106, 67, 1) 0%, rgba(253, 215, 173, 1) 100%);
+  border-bottom: none !important;
+}
+
+.order-card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.order-id {
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.order-time {
+  border-radius: 0 0 0.375rem 0.375rem;
+}
